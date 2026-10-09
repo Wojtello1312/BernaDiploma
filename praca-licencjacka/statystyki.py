@@ -2,7 +2,7 @@ from pathlib import Path
 import re,json,statistics
 root=Path(__file__).parent
 results=[]
-for p in sorted((root/'tekst').glob('0[0-6]*.md')):
+for p in [root/'tekst/00-wstep.md', *sorted((root/'tekst').glob('0[1-6]-*.md'))]:
  paras=[x.strip() for x in p.read_text().split('\n\n') if x.strip() and not x.startswith(('#','|','**Tabela','Źródło:'))]
  sents=[]
  for par in paras:

@@ -1,0 +1,72 @@
+{
+  "chapters": [
+    {
+      "file": "00-wstep.md",
+      "sentences": 51,
+      "words": 621,
+      "mean": 12.18,
+      "median": 11,
+      "max": 23,
+      "over30": 0
+    },
+    {
+      "file": "01-ai.md",
+      "sentences": 125,
+      "words": 1671,
+      "mean": 13.37,
+      "median": 11,
+      "max": 25,
+      "over30": 0
+    },
+    {
+      "file": "02-personalizacja.md",
+      "sentences": 131,
+      "words": 1602,
+      "mean": 12.23,
+      "median": 11,
+      "max": 24,
+      "over30": 0
+    },
+    {
+      "file": "03-zastosowania.md",
+      "sentences": 148,
+      "words": 1878,
+      "mean": 12.69,
+      "median": 11.0,
+      "max": 24,
+      "over30": 0
+    },
+    {
+      "file": "04-uwarunkowania.md",
+      "sentences": 153,
+      "words": 1912,
+      "mean": 12.5,
+      "median": 11,
+      "max": 25,
+      "over30": 0
+    },
+    {
+      "file": "05-przypadki.md",
+      "sentences": 135,
+      "words": 1692,
+      "mean": 12.53,
+      "median": 11,
+      "max": 25,
+      "over30": 0
+    },
+    {
+      "file": "06-zakonczenie.md",
+      "sentences": 45,
+      "words": 554,
+      "mean": 12.31,
+      "median": 11,
+      "max": 25,
+      "over30": 0
+    }
+  ],
+  "total": {
+    "sentences": 788,
+    "words": 9930,
+    "mean": 12.6
+  }
+}

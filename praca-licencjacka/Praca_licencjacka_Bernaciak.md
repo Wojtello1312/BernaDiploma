@@ -1,3 +1,9 @@
+# STRESZCZENIE
+
+Praca przedstawia zastosowanie sztucznej inteligencji do personalizacji relacji z klientami sklepów internetowych. Jej celem jest wyjaśnienie sposobów dopasowywania oferty, komunikacji i obsługi oraz ocena korzyści i ograniczeń tych działań. Zastosowano przegląd literatury i analizę porównawczą publicznie opisanych rozwiązań Amazon, Zalando i Allegro. Omówiono systemy rekomendacyjne, analitykę predykcyjną oraz narzędzia prowadzące rozmowę z klientem. Przeanalizowano także znaczenie jakości danych, przejrzystości działania i ochrony prywatności. Wyniki wskazują, że sztuczna inteligencja może ułatwiać wybór produktów i usprawniać kontakt ze sklepem. Sama trafność podpowiedzi nie dowodzi jednak trwałej poprawy relacji. Dostępne materiały firmowe pokazują funkcje narzędzi, lecz zwykle nie pozwalają przypisać zmian lojalności wyłącznie zastosowaniu AI. W pracy wskazano, że ocenę personalizacji należy opierać na wielu miarach. Obejmują one użyteczność propozycji, jakość obsługi, bezpieczeństwo danych i zaufanie odbiorców. Wnioski mają charakter jakościowy, ponieważ nie przeprowadzono własnej ankiety ani eksperymentu na danych klientów.
+
+*Słowa kluczowe: sztuczna inteligencja, personalizacja, handel elektroniczny, relacje z klientami, systemy rekomendacyjne.*
+
 # WSTĘP
 
 Handel internetowy zmienił sposób poszukiwania produktów oraz kontaktowania się klientów ze sprzedawcami. Oferta jest dostępna przez całą dobę, często z poziomu telefonu komórkowego. Możliwe staje się porównywanie cen, czytanie opinii oraz sprawdzanie dostępności wielu produktów, a jednocześnie duży wybór może utrudniać podjęcie decyzji. Klient potrzebuje więc pomocy w znalezieniu rozwiązania odpowiadającego jego sytuacji. Taką funkcję mogą pełnić odpowiednio zaprojektowane narzędzia personalizacji.
@@ -22,14 +28,13 @@ Konstrukcja pracy obejmuje pięć rozdziałów. W pierwszym wyjaśniono podstawo
 
 Zakres pracy odpowiada problematyce zarządzania ze specjalnością informatyka gospodarcza. Rozwiązania techniczne opisano w stopniu potrzebnym do oceny ich zastosowań biznesowych, jednak nie przedstawiono instrukcji budowy modeli ani szczegółowej dokumentacji programistycznej. Szczególną uwagę poświęcono powiązaniu działania systemu z potrzebami konkretnego klienta. Taka perspektywa pozwala ocenić personalizację szerzej niż wyłącznie przez wzrost sprzedaży.
 
-
-# ROZDZIAŁ 1. SZTUCZNA INTELIGENCJA
+# 1. SZTUCZNA INTELIGENCJA
 
 ## 1.1. Definicje i ewolucja pojęcia sztucznej inteligencji
 
 Sztuczna inteligencja jest związana z tworzeniem systemów wykonujących zadania wymagające przetwarzania informacji. Obejmuje między innymi rozpoznawanie wzorców, wnioskowanie, uczenie się oraz analizowanie języka, nie istnieje jednak jeden praktyczny mechanizm odpowiadający wszystkim tym zadaniom. Pod wspólną nazwą występują różne metody, których zastosowanie zależy od problemu. W handlu internetowym mogą one wspierać wyszukiwanie produktów, rekomendacje i obsługę klientów.
 
-McCarthy określał AI jako naukę i inżynierię tworzenia inteligentnych maszyn (McCarthy, 2007). Definicja ta podkreśla zarówno poznawczy, jak i praktyczny charakter rozwijanej dziedziny. Obejmuje badanie sposobów rozwiązywania problemów oraz budowanie systemów wykonujących określone zadania, jednak nie oznacza przy tym, że maszyna musi myśleć dokładnie jak człowiek. Dla przedsiębiorstwa ważniejsza jest przydatność rozwiązania niż podobieństwo jego działania do ludzkiego rozumowania.
+McCarthy określał AI jako naukę i inżynierię tworzenia inteligentnych maszyn (McCarthy 2007). Definicja ta podkreśla zarówno poznawczy, jak i praktyczny charakter rozwijanej dziedziny. Obejmuje badanie sposobów rozwiązywania problemów oraz budowanie systemów wykonujących określone zadania, jednak nie oznacza przy tym, że maszyna musi myśleć dokładnie jak człowiek. Dla przedsiębiorstwa ważniejsza jest przydatność rozwiązania niż podobieństwo jego działania do ludzkiego rozumowania.
 
 W praktyce biznesowej należy oddzielać możliwości konkretnego systemu od ogólnych wyobrażeń dotyczących AI. Program rekomendujący obuwie nie musi rozumieć wszystkich aspektów zachowania konsumenta, lecz może jedynie wykrywać zależności między oglądanymi produktami i wcześniejszymi transakcjami. Zakres jego działania wynika z danych, przyjętego celu i zastosowanej metody. Przekroczenie tych granic zwiększa ryzyko błędnej interpretacji uzyskanego wyniku.
 
@@ -43,17 +48,17 @@ Ważnym pojęciem jest także automatyzacja, która nie musi oznaczać wykorzyst
 
 Rozwój AI obejmował podejścia oparte na regułach, danych oraz coraz bardziej rozbudowanych modelach, co nie oznacza całkowitego zastąpienia wcześniejszych metod przez rozwiązania nowsze. W wielu procesach nadal przydatne są proste warunki i ograniczenia biznesowe, a model może ustalać kolejność produktów, natomiast reguła wykluczać towary chwilowo niedostępne. Takie połączenie pozwala dostosować wynik do rzeczywistych warunków sprzedaży.
 
-W kontekście zarządzania ważne jest zatem pytanie o zadanie realizowane przez AI. Huang i Rust rozpatrują jej zastosowania w różnych działaniach marketingowych (Huang, Rust, 2021), przy czym obejmują one przetwarzanie informacji oraz wspieranie decyzji dotyczących kontaktu z odbiorcami. Zastosowanie technologii powinno wynikać z rozpoznanego problemu, a nie samej dostępności narzędzia. W przeciwnym razie można uzyskać kosztowny system o niewielkiej wartości dla klientów.
+W kontekście zarządzania ważne jest zatem pytanie o zadanie realizowane przez AI. Huang i Rust rozpatrują jej zastosowania w różnych działaniach marketingowych (Huang i Rust 2021), przy czym obejmują one przetwarzanie informacji oraz wspieranie decyzji dotyczących kontaktu z odbiorcami. Zastosowanie technologii powinno wynikać z rozpoznanego problemu, a nie samej dostępności narzędzia. W przeciwnym razie można uzyskać kosztowny system o niewielkiej wartości dla klientów.
 
 ## 1.2. AI w handlu elektronicznym
 
-Handel elektroniczny obejmuje transakcje, w których zamówienie jest składane przez sieci komputerowe, jednak nie wymaga to elektronicznej postaci samego produktu ani dostarczenia go przez Internet. Zakup odzieży przez stronę sklepu pozostaje przykładem e-commerce, mimo fizycznej dostawy. OECD wskazuje na znaczenie sposobu składania zamówienia przy definiowaniu tego obszaru (OECD, 2019). Rozróżnienie to ułatwia analizę procesów poprzedzających transakcję oraz następujących po niej.
+Handel elektroniczny obejmuje transakcje, w których zamówienie jest składane przez sieci komputerowe, jednak nie wymaga to elektronicznej postaci samego produktu ani dostarczenia go przez Internet. Zakup odzieży przez stronę sklepu pozostaje przykładem e‑commerce, mimo fizycznej dostawy. OECD wskazuje na znaczenie sposobu składania zamówienia przy definiowaniu tego obszaru (OECD 2019). Rozróżnienie to ułatwia analizę procesów poprzedzających transakcję oraz następujących po niej.
 
 Rozwój handlu internetowego zwiększył znaczenie informacji dostępnych podczas kontaktu ze sklepem. Rejestrowane mogą być zapytania, wyświetlenia produktów, dodania do koszyka i zakupy, jednak nie każda informacja jest równie przydatna przy poznawaniu potrzeb odbiorcy. Samo otwarcie strony produktu może wynikać z pomyłki lub zwykłej ciekawości, dlatego dopiero zestawienie zdarzeń pozwala formułować ostrożne przypuszczenia dotyczące zainteresowania ofertą.
 
 Historia transakcji dostarcza innych informacji niż zachowanie podczas aktualnej wizyty. Poprzedni zakup opisuje podjętą decyzję, ale nie musi odzwierciedlać obecnego celu. Osoba regularnie kupująca książki może właśnie poszukiwać prezentu dla małego dziecka. Nadmierne przywiązanie systemu do jej dawnych wyborów ograniczy użyteczność rekomendacji, dlatego personalizacja powinna uwzględniać możliwość zmiany potrzeb i kontekstu.
 
-Wczesne rekomendacje internetowe nie sprowadzały się wyłącznie do ręcznie zapisanych reguł. Opis systemu Amazon wskazywał na wykorzystanie podobieństwa między kupowanymi produktami (Linden, Smith, York, 2003). Było to rozwiązanie korzystające z obserwowanych wzorców współwystępowania interakcji, dlatego nie należy przedstawiać całej historii rekomendacji jako prostego przejścia od reguł do inteligencji. Rozwijano różne metody, odpowiadające odmiennym warunkom i ograniczeniom technicznym.
+Wczesne rekomendacje internetowe nie sprowadzały się wyłącznie do ręcznie zapisanych reguł. Opis systemu Amazon wskazywał na wykorzystanie podobieństwa między kupowanymi produktami (Linden et al. 2003). Było to rozwiązanie korzystające z obserwowanych wzorców współwystępowania interakcji, dlatego nie należy przedstawiać całej historii rekomendacji jako prostego przejścia od reguł do inteligencji. Rozwijano różne metody, odpowiadające odmiennym warunkom i ograniczeniom technicznym.
 
 Obecnie obszary zastosowania AI można powiązać z etapami działania sklepu internetowego. Przed zakupem system pomaga wyszukać produkt oraz porównać dostępne możliwości. Podczas transakcji może dopasowywać informacje potrzebne do zakończenia zamówienia. Po zakupie wspiera odpowiadanie na pytania i porządkowanie zgłoszeń serwisowych, jednak nie każda z tych funkcji wymaga takiego samego modelu.
 
@@ -71,23 +76,23 @@ Procesory centralne, określane jako CPU, wykonują wiele różnorodnych zadań 
 
 Zastosowanie GPU może skracać obliczenia, lecz skala korzyści zależy od konkretnego zadania. Znaczenie mają rozmiar modelu, sposób przygotowania danych oraz dostępna pamięć urządzenia, jednak nie każde rozwiązanie personalizacyjne wymaga własnego serwera wyposażonego w akcelerator. Prosty model rekomendacji może działać na innych zasobach lub jako usługa. Dobór sprzętu powinien wynikać z pomiaru rzeczywistego obciążenia systemu.
 
-Rozwijane są również wyspecjalizowane układy przeznaczone do operacji związanych z uczeniem maszynowym. Przykładem są procesory tensorowe TPU, opisane przez Jouppiego i współautorów (Jouppi i in., 2017). Ich konstrukcję dopasowano do określonych obliczeń wykonywanych przez sieci neuronowe. Pokazuje to rosnące znaczenie sprzętu projektowanego pod konkretne grupy zadań, nie oznacza jednak, że TPU stanowi konieczny element każdego sklepu korzystającego z AI.
+Rozwijane są również wyspecjalizowane układy przeznaczone do operacji związanych z uczeniem maszynowym. Przykładem są procesory tensorowe TPU, opisane przez Jouppiego i współautorów (Jouppi et al. 2017). Ich konstrukcję dopasowano do określonych obliczeń wykonywanych przez sieci neuronowe. Pokazuje to rosnące znaczenie sprzętu projektowanego pod konkretne grupy zadań, nie oznacza jednak, że TPU stanowi konieczny element każdego sklepu korzystającego z AI.
 
-Ważną rolę odgrywa chmura obliczeniowa, pozwalająca korzystać z zasobów udostępnianych jako usługa. Definicja NIST wskazuje między innymi dostęp na żądanie oraz elastyczność zasobów (Mell, Grance, 2011). Przedsiębiorstwo może dzięki temu dostosowywać wykorzystanie infrastruktury do bieżącego zapotrzebowania, ale nie musi samodzielnie utrzymywać całego zaplecza technicznego potrzebnego do prowadzenia obliczeń. Nadal odpowiada jednak za właściwe skonfigurowanie usług i kontrolowanie kosztów.
+Ważną rolę odgrywa chmura obliczeniowa, pozwalająca korzystać z zasobów udostępnianych jako usługa. Definicja NIST wskazuje między innymi dostęp na żądanie oraz elastyczność zasobów (Mell i Grance 2011). Przedsiębiorstwo może dzięki temu dostosowywać wykorzystanie infrastruktury do bieżącego zapotrzebowania, ale nie musi samodzielnie utrzymywać całego zaplecza technicznego potrzebnego do prowadzenia obliczeń. Nadal odpowiada jednak za właściwe skonfigurowanie usług i kontrolowanie kosztów.
 
 W sklepie internetowym obciążenie może zmieniać się zależnie od sezonu lub promocji. Elastyczna infrastruktura ułatwia obsługę okresów zwiększonego zainteresowania produktami. Rozliczenie usług wymaga jednak uwzględnienia transferu danych, przechowywania informacji i liczby zapytań. Niska cena pojedynczego wywołania modelu może dawać znaczny koszt przy dużym ruchu, dlatego opłacalność należy szacować dla całego procesu, a nie jednej operacji.
 
-Tworzenie modeli wspierają również biblioteki i środowiska programistyczne. TensorFlow oraz PyTorch dostarczają narzędzi do definiowania i wykonywania obliczeń (Abadi i in., 2016; Paszke i in., 2019). Ułatwiają pracę nad modelami, lecz nie zastępują przygotowania danych i oceny wyników. Informacje projektowe są dostępne odpowiednio na stronach tensorflow.org oraz pytorch.org. Wykorzystanie biblioteki nie jest jeszcze dowodem jakości stworzonego z jej pomocą systemu.
+Tworzenie modeli wspierają również biblioteki i środowiska programistyczne. TensorFlow oraz PyTorch dostarczają narzędzi do definiowania i wykonywania obliczeń (Abadi et al. 2016, Paszke et al. 2019). Ułatwiają pracę nad modelami, lecz nie zastępują przygotowania danych i oceny wyników. Informacje projektowe są dostępne odpowiednio na stronach tensorflow.org oraz pytorch.org. Wykorzystanie biblioteki nie jest jeszcze dowodem jakości stworzonego z jej pomocą systemu.
 
 Znaczenie ma także integracja infrastruktury z codziennym działaniem przedsiębiorstwa. Model potrzebuje dostępu do aktualnego katalogu oraz informacji o dostępności produktów. Wynik powinien dotrzeć do witryny w czasie akceptowalnym dla użytkownika. Nawet trafna rekomendacja straci wartość, jeśli znacznie opóźni otwarcie strony. Ocena technologii powinna więc obejmować cały przepływ informacji, od danych do kontaktu z klientem.
 
 ## 1.4. Sieci neuronowe, transformery i modele generatywne
 
-Uczenie głębokie jest grupą metod wykorzystujących wielowarstwowe sieci neuronowe do analizy danych. Kolejne warstwy przekształcają informacje, tworząc reprezentacje przydatne przy realizacji określonego zadania. W analizie obrazu mogą one pomagać rozpoznawać cechy widocznych produktów. W analizie tekstu wspierają przetwarzanie zależności występujących między słowami. Rozwój tych metod opisują LeCun, Bengio i Hinton (LeCun, Bengio, Hinton, 2015).
+Uczenie głębokie jest grupą metod wykorzystujących wielowarstwowe sieci neuronowe do analizy danych. Kolejne warstwy przekształcają informacje, tworząc reprezentacje przydatne przy realizacji określonego zadania. W analizie obrazu mogą one pomagać rozpoznawać cechy widocznych produktów. W analizie tekstu wspierają przetwarzanie zależności występujących między słowami. Rozwój tych metod opisują LeCun, Bengio i Hinton (LeCun et al. 2015).
 
 Przykładem zastosowania w sklepie może być wyszukiwanie produktów podobnych do przesłanej fotografii. System porównuje cechy obrazu z reprezentacjami fotografii dostępnych w katalogu. Podobieństwo wizualne nie musi jednak oznaczać zgodności rozmiaru, materiału czy przeznaczenia, dlatego wynik analizy obrazu powinien być łączony z danymi opisującymi produkt. Dopiero taki zestaw informacji może ułatwiać podjęcie praktycznej decyzji zakupowej.
 
-Istotną zmianę w przetwarzaniu języka przyniosła architektura transformera. Jej opis przedstawili Vaswani i współautorzy w pracy poświęconej mechanizmowi uwagi (Vaswani i in., 2017). Mechanizm ten pozwala uwzględniać związki między elementami przetwarzanej sekwencji. Znaczenie słowa może być oceniane z uwzględnieniem pozostałych części wypowiedzi. Ułatwia to tworzenie reprezentacji potrzebnych między innymi podczas przetwarzania zapytań tekstowych.
+Istotną zmianę w przetwarzaniu języka przyniosła architektura transformera. Jej opis przedstawili Vaswani i współautorzy w pracy poświęconej mechanizmowi uwagi (Vaswani et al. 2017). Mechanizm ten pozwala uwzględniać związki między elementami przetwarzanej sekwencji. Znaczenie słowa może być oceniane z uwzględnieniem pozostałych części wypowiedzi. Ułatwia to tworzenie reprezentacji potrzebnych między innymi podczas przetwarzania zapytań tekstowych.
 
 Modele generatywne mogą tworzyć tekst, obrazy lub inne rodzaje treści. W handlu internetowym wykorzystuje się je między innymi do prowadzenia rozmów, a klient może opisać potrzebę zwykłym językiem, zamiast wybierać wiele oddzielnych filtrów. System interpretuje wypowiedź i przygotowuje odpowiedź dopasowaną do dostępnego kontekstu. Jakość odpowiedzi zależy jednak również od informacji, którymi model rzeczywiście dysponuje.
 
@@ -95,26 +100,25 @@ Płynność wypowiedzi nie stanowi gwarancji prawdziwości podanych informacji, 
 
 W praktyce należy rozdzielać zadania językowe od podejmowania decyzji wywołujących skutki finansowe, a model może przygotować odpowiedź dotyczącą zwrotu, ale zatwierdzenie operacji wymaga kontroli uprawnień. Podobnie sugestia produktu nie powinna samodzielnie zmieniać zawartości opłaconego zamówienia. Możliwości techniczne trzeba połączyć z jasno określoną odpowiedzialnością za działanie systemu, dzięki czemu AI może wspierać obsługę, zachowując przewidywalność procesu zakupowego.
 
-
-# ROZDZIAŁ 2. PERSONALIZACJA W MARKETINGU CYFROWYM
+# 2. PERSONALIZACJA W MARKETINGU CYFROWYM
 
 ## 2.1. Rozwój handlu internetowego i przebieg procesu zakupowego
 
 Poszukiwanie produktu w Internecie może rozpocząć się poza stroną konkretnego sklepu. Klient korzysta z wyszukiwarki, porównywarki, mediów społecznościowych albo polecenia innej osoby. Na każdym z tych etapów otrzymuje informacje wpływające na dalszą decyzję, dlatego sama witryna sprzedażowa jest częścią szerszego otoczenia zakupowego. Jej skuteczność zależy także od zgodności informacji przekazywanych w pozostałych kanałach.
 
-OECD opisuje handel elektroniczny jako obszar obejmujący różne modele i uczestników rynku (OECD, 2019). Obok sklepów prowadzonych przez pojedyncze przedsiębiorstwa funkcjonują platformy skupiające wielu sprzedawców. W takim modelu klient ocenia zarówno platformę, jak też konkretnego dostawcę produktu. Zadowolenie z wyszukiwania może współistnieć z niezadowoleniem dotyczącym realizacji zamówienia. Personalizacja interfejsu nie usuwa problemów związanych z jakością pozostałych etapów obsługi.
+OECD opisuje handel elektroniczny jako obszar obejmujący różne modele i uczestników rynku (OECD 2019). Obok sklepów prowadzonych przez pojedyncze przedsiębiorstwa funkcjonują platformy skupiające wielu sprzedawców. W takim modelu klient ocenia zarówno platformę, jak też konkretnego dostawcę produktu. Zadowolenie z wyszukiwania może współistnieć z niezadowoleniem dotyczącym realizacji zamówienia. Personalizacja interfejsu nie usuwa problemów związanych z jakością pozostałych etapów obsługi.
 
 Proces zakupowy można rozpatrywać od rozpoznania potrzeby do oceny otrzymanego produktu. Początkowo klient może znać jedynie problem wymagający rozwiązania, bez określenia konkretnej marki. Następnie porównuje dostępne możliwości, analizując ceny, cechy oraz warunki dostawy, a dopiero później wybiera ofertę i podejmuje decyzję o złożeniu zamówienia. Po zakupie ocenia zgodność produktu z oczekiwaniami oraz jakość kontaktu ze sprzedawcą.
 
 W rzeczywistości proces ten nie zawsze przebiega w sposób uporządkowany i liniowy, a użytkownik może wracać do wcześniejszych etapów, zmieniać urządzenie albo odkładać decyzję. Czasami porównuje produkty online, lecz kupuje je później w sklepie stacjonarnym. Innym razem ogląda produkt na miejscu, a zamówienie składa przez Internet, dlatego pojedyncza sesja na stronie nie przedstawia całej relacji z klientem.
 
-Lemon i Verhoef podkreślają znaczenie doświadczenia budowanego przez różne punkty kontaktu (Lemon, Verhoef, 2016), przy czym obejmuje ono etapy poprzedzające zakup, sam zakup oraz późniejsze interakcje. Z tej perspektywy personalizacja powinna wspierać ciągłość doświadczenia, a nie jedynie pojedynczy komunikat. Propozycja zakupu kolejnego produktu może być niewłaściwa, gdy poprzednia reklamacja pozostaje nierozwiązana. Znajomość historii kontaktu powinna zatem pomagać również w powstrzymywaniu zbędnych działań sprzedażowych.
+Lemon i Verhoef podkreślają znaczenie doświadczenia budowanego przez różne punkty kontaktu (Lemon i Verhoef 2016), przy czym obejmuje ono etapy poprzedzające zakup, sam zakup oraz późniejsze interakcje. Z tej perspektywy personalizacja powinna wspierać ciągłość doświadczenia, a nie jedynie pojedynczy komunikat. Propozycja zakupu kolejnego produktu może być niewłaściwa, gdy poprzednia reklamacja pozostaje nierozwiązana. Znajomość historii kontaktu powinna zatem pomagać również w powstrzymywaniu zbędnych działań sprzedażowych.
 
 Poszczególne etapy wiążą się z odmiennym rodzajem potrzeb informacyjnych. Przed zakupem ważne mogą być porównanie parametrów i wyjaśnienie różnic pomiędzy wariantami. Podczas finalizacji zamówienia większe znaczenie mają koszty dostawy oraz przewidywany termin odbioru. Później klient potrzebuje informacji o użytkowaniu, zwrocie albo zgłoszeniu problemu. Dopasowanie treści powinno odnosić się do tak rozpoznanego zadania.
 
-Tabela 2.1 przedstawia potrzeby klienta oraz przykładowe sposoby dopasowania na kolejnych etapach relacji.
+Tabela 1 przedstawia potrzeby klienta oraz przykładowe sposoby dopasowania na kolejnych etapach relacji.
 
-**Tabela 2.1. Personalizacja na kolejnych etapach relacji z klientem**
+**Tabela 1. Personalizacja na kolejnych etapach relacji z klientem**
 
 | Etap | Potrzeba odbiorcy | Możliwe dopasowanie | Ryzyko błędnego działania |
 |---|---|---|---|
@@ -132,7 +136,7 @@ Zestawienie pokazuje, że ten sam mechanizm nie będzie właściwy w każdej syt
 
 Personalizacja jest jednym ze sposobów dostosowywania działań marketingowych do odbiorców przedsiębiorstwa. Jej celem może być ułatwienie wyboru, poprawa komunikacji albo podtrzymanie zainteresowania ofertą, ale nie należy traktować jej jako samodzielnej strategii rozwiązującej wszystkie problemy sklepu. Dopasowany komunikat nie zastąpi dobrej jakości produktu i terminowej dostawy. Powinien wspierać szerszy sposób zarządzania relacjami z klientami.
 
-Podejście CRM obejmuje procesy związane z budowaniem i utrzymywaniem takich relacji, jednak nie jest to wyłącznie nazwa programu przechowującego kontakty oraz historię transakcji. Payne i Frow przedstawiają CRM jako podejście wymagające powiązania różnych procesów organizacyjnych (Payne, Frow, 2005). Obejmuje ono między innymi tworzenie wartości oraz zarządzanie informacją. System informatyczny wspiera te działania, ale nie określa samodzielnie ich celu.
+Podejście CRM obejmuje procesy związane z budowaniem i utrzymywaniem takich relacji, jednak nie jest to wyłącznie nazwa programu przechowującego kontakty oraz historię transakcji. Payne i Frow przedstawiają CRM jako podejście wymagające powiązania różnych procesów organizacyjnych (Payne i Frow 2005). Obejmuje ono między innymi tworzenie wartości oraz zarządzanie informacją. System informatyczny wspiera te działania, ale nie określa samodzielnie ich celu.
 
 W praktyce personalizacja wymaga połączenia wiedzy o kliencie z odpowiednią decyzją działania. Informacja o wcześniejszym zakupie może pomóc dobrać akcesorium pasujące do produktu. Wiadomość o nierozwiązanej reklamacji powinna natomiast wpływać na sposób prowadzenia kolejnego kontaktu. Samo zgromadzenie danych nie gwarantuje ich właściwego wykorzystania przez przedsiębiorstwo, dlatego potrzebne są reguły określające, kiedy dane rzeczywiście służą klientowi.
 
@@ -154,7 +158,7 @@ Bardziej złożone dopasowanie wykorzystuje historię zachowania i zależności 
 
 Personalizacja może dotyczyć także samego sposobu prezentowania informacji. Osobie porównującej urządzenia przydatne będzie zestawienie parametrów technicznych w uporządkowanej tabeli. Klient poszukujący inspiracji może natomiast lepiej wykorzystać przykłady zastosowania danego produktu, jednak nie chodzi wówczas o zmianę jego cech, lecz formy przedstawienia oferty. Treść musi pozostawać zgodna z rzeczywistymi właściwościami przedmiotu sprzedaży.
 
-W działaniach marketingowych stosuje się również dopasowywanie komunikacji poza stroną sklepu, obejmujące wiadomości elektroniczne, powiadomienia aplikacji lub reklamy kierowane do odbiorców. Skuteczność takiego kontaktu zależy od treści, chwili i miejsca jego wyświetlenia. Bleier i Eisenbeiss analizują właśnie znaczenie kontekstu personalizowanej reklamy internetowej (Bleier, Eisenbeiss, 2015). Wyników dotyczących reklamy nie należy jednak automatycznie przenosić na całą obsługę klienta.
+W działaniach marketingowych stosuje się również dopasowywanie komunikacji poza stroną sklepu, obejmujące wiadomości elektroniczne, powiadomienia aplikacji lub reklamy kierowane do odbiorców. Skuteczność takiego kontaktu zależy od treści, chwili i miejsca jego wyświetlenia. Bleier i Eisenbeiss analizują właśnie znaczenie kontekstu personalizowanej reklamy internetowej (Bleier i Eisenbeiss 2015). Wyników dotyczących reklamy nie należy jednak automatycznie przenosić na całą obsługę klienta.
 
 Przykładem ilustracyjnym może być ponowne pokazanie wcześniej oglądanego plecaka. Wiadomość wysłana podczas aktywnego porównywania ofert może ułatwić powrót do produktu. Ta sama propozycja po zakończeniu zakupu może okazać się zbędna lub irytująca. Przydatniejsze byłoby wtedy wyjaśnienie sposobu konserwacji albo dopasowanie akcesorium. Przykład pokazuje znaczenie aktualności informacji, nie przedstawia wyniku badania konkretnej firmy.
 
@@ -168,7 +172,7 @@ Istotnym elementem projektu jest także porównanie rozwiązania z prostym punkt
 
 Oczekiwania klientów są zróżnicowane, dlatego nie należy przypisywać wszystkim identycznych preferencji. Część odbiorców docenia podpowiedzi, a inni wolą samodzielnie przeglądać pełną ofertę, przy czym znaczenie ma charakter zakupu, wcześniejsze doświadczenie oraz wrażliwość przetwarzanych informacji. Rekomendowanie książki może być oceniane inaczej niż sugerowanie produktu związanego ze zdrowiem. Różny może być też poziom akceptacji dla wykorzystywania historii zachowania.
 
-Badania nad paradoksem personalizacji wskazują na napięcie między dopasowaniem a prywatnością. Aguirre i współautorzy analizują znaczenie zbierania informacji oraz działań budujących zaufanie (Aguirre i in., 2015). Samo zwiększanie szczegółowości danych nie zapewnia zatem lepszego odbioru reklamy, przy czym ważne jest również to, czy sposób ich pozyskania jest zrozumiały. Klient ocenia nie tylko propozycję, lecz także warunki powstania komunikatu.
+Badania nad paradoksem personalizacji wskazują na napięcie między dopasowaniem a prywatnością. Aguirre i współautorzy analizują znaczenie zbierania informacji oraz działań budujących zaufanie (Aguirre et al. 2015). Samo zwiększanie szczegółowości danych nie zapewnia zatem lepszego odbioru reklamy, przy czym ważne jest również to, czy sposób ich pozyskania jest zrozumiały. Klient ocenia nie tylko propozycję, lecz także warunki powstania komunikatu.
 
 Odbiorca może oczekiwać wygody bez konieczności ujawniania dużej liczby informacji osobistych. Te dwa cele bywają trudne do pełnego pogodzenia w jednym rozwiązaniu. Możliwe jest jednak ograniczanie zakresu danych do potrzeb konkretnej funkcji. Rekomendacja oparta na aktualnie oglądanym produkcie nie zawsze wymaga długiej historii użytkownika. Taki wariant może stanowić użyteczny punkt wyjścia dla nowych klientów.
 
@@ -180,8 +184,7 @@ Nie każda deklaracja zadowolenia przekłada się na długotrwałą relację ze 
 
 Przedsiębiorstwo powinno również uwzględniać użytkowników, którzy nie chcą korzystać z personalizacji. Zachowanie użytecznej wyszukiwarki, filtrów i standardowej obsługi ogranicza ich wykluczenie. Rezygnacja z dopasowania nie powinna sama w sobie uniemożliwiać podstawowego zakupu. Z perspektywy zarządzania oznacza to potrzebę projektowania różnych ścieżek kontaktu. Dobre doświadczenie wynika z dostępności odpowiednich możliwości, a nie obowiązkowego używania jednego mechanizmu.
 
-
-# ROZDZIAŁ 3. ZASTOSOWANIA AI W PERSONALIZACJI RELACJI Z KLIENTAMI
+# 3. ZASTOSOWANIA AI W PERSONALIZACJI RELACJI Z KLIENTAMI
 
 ## 3.1. Systemy rekomendacyjne i sposoby dopasowywania produktów
 
@@ -189,9 +192,9 @@ System rekomendacyjny porządkuje dostępne możliwości, aby ułatwić odbiorcy
 
 Jedną z podstawowych metod jest filtrowanie oparte na treści produktów. System wykorzystuje cechy przedmiotów, takie jak kategoria, materiał, przeznaczenie albo parametry techniczne. Następnie wyszukuje podobieństwa względem produktów odpowiadających dotychczasowym preferencjom użytkownika. Osobie przeglądającej lekkie plecaki turystyczne można zaproponować modele o zbliżonych właściwościach. Skuteczność takiego podejścia zależy między innymi od jakości opisów w katalogu.
 
-Odmiennym rozwiązaniem jest filtrowanie współpracujące, wykorzystujące wzorce interakcji z wieloma produktami. Zależności mogą dotyczyć podobnych użytkowników albo przedmiotów wybieranych w zbliżonych sytuacjach. System nie musi wtedy opierać się wyłącznie na szczegółowych opisach asortymentu. Potrzebuje natomiast odpowiedniego materiału pokazującego wcześniejsze zachowania i wybory klientów. Podstawowe podejścia oraz ich ograniczenia omawiają Adomavicius i Tuzhilin (Adomavicius, Tuzhilin, 2005).
+Odmiennym rozwiązaniem jest filtrowanie współpracujące, wykorzystujące wzorce interakcji z wieloma produktami. Zależności mogą dotyczyć podobnych użytkowników albo przedmiotów wybieranych w zbliżonych sytuacjach. System nie musi wtedy opierać się wyłącznie na szczegółowych opisach asortymentu. Potrzebuje natomiast odpowiedniego materiału pokazującego wcześniejsze zachowania i wybory klientów. Podstawowe podejścia oraz ich ograniczenia omawiają Adomavicius i Tuzhilin (Adomavicius i Tuzhilin 2005).
 
-Wariant opisany przez twórców rekomendacji Amazon wykorzystuje podobieństwo między produktami. Zamiast każdorazowo porównywać klienta ze wszystkimi użytkownikami, można korzystać z przygotowanych powiązań przedmiotów. Następnie dobiera się propozycje na podstawie produktów związanych z daną osobą. Rozwiązanie odpowiadało problemowi skali dużego katalogu oraz licznej grupy klientów (Linden, Smith, York, 2003), nie stanowi jednak opisu wszystkich współczesnych mechanizmów stosowanych przez Amazon.
+Wariant opisany przez twórców rekomendacji Amazon wykorzystuje podobieństwo między produktami. Zamiast każdorazowo porównywać klienta ze wszystkimi użytkownikami, można korzystać z przygotowanych powiązań przedmiotów. Następnie dobiera się propozycje na podstawie produktów związanych z daną osobą. Rozwiązanie odpowiadało problemowi skali dużego katalogu oraz licznej grupy klientów (Linden et al. 2003), nie stanowi jednak opisu wszystkich współczesnych mechanizmów stosowanych przez Amazon.
 
 Podejścia hybrydowe łączą kilka rodzajów informacji potrzebnych do tworzenia rekomendacji. Wykorzystywane mogą być cechy produktów, historia interakcji oraz aktualny kontekst wizyty, co pozwala ograniczać słabości pojedynczej metody, choć zwiększa złożoność rozwiązania. Trudniejsze staje się także ustalenie przyczyny konkretnej propozycji przedstawionej klientowi. Projekt wymaga więc równoczesnej kontroli trafności, szybkości oraz możliwości wyjaśnienia wyniku.
 
@@ -199,9 +202,9 @@ Częstym problemem jest zimny start, czyli niedostatek danych o użytkowniku lub
 
 Drugie ograniczenie dotyczy nadmiernego powtarzania produktów podobnych do wcześniej oglądanych. Klient otrzymuje trafne, lecz bardzo wąskie propozycje, przez co trudniej odkrywa alternatywy, a system może także utrwalać popularność produktów, które już wcześniej często pokazywano. Powstaje zależność między ekspozycją oferty a danymi służącymi do kolejnego uczenia. W ocenie warto więc uwzględniać różnorodność oraz dostępność mniej oczywistych możliwości.
 
-W tabeli 3.1 porównano podstawy działania oraz ograniczenia najważniejszych podejść do rekomendowania produktów.
+W tabeli 2 porównano podstawy działania oraz ograniczenia najważniejszych podejść do rekomendowania produktów.
 
-**Tabela 3.1. Porównanie podstawowych podejść rekomendacyjnych**
+**Tabela 2. Porównanie podstawowych podejść rekomendacyjnych**
 
 | Podejście | Główna podstawa dopasowania | Przydatność | Ograniczenie |
 |---|---|---|---|
@@ -222,7 +225,7 @@ Dobrym przykładem jest przewidywanie zainteresowania ponownym zakupem produktu 
 
 Innym zastosowaniem jest rozpoznawanie sygnałów wskazujących na możliwą utratę klienta. Dłuższa przerwa w zakupach może uzasadniać sprawdzenie jakości dotychczasowej obsługi, nie powinna jednak automatycznie prowadzić do wysłania rabatu każdej nieaktywnej osobie. Powodem przerwy może być sezonowość produktu albo naturalnie rzadka potrzeba zakupowa. Właściwa reakcja zależy więc od interpretacji wyniku w kontekście działalności sklepu.
 
-Huang i Rust wskazują szerokie możliwości wykorzystania AI w działaniach marketingowych (Huang, Rust, 2021), przy czym obejmują one analizowanie informacji i wspieranie wyboru odpowiednich działań wobec odbiorców. W praktyce należy jednak oddzielić przewidywanie zachowania od przewidywania skutku interwencji. Klient prawdopodobnie dokonujący zakupu nie musi potrzebować dodatkowej zachęty cenowej. Przyznanie mu rabatu może obniżyć marżę bez zmiany decyzji zakupowej.
+Huang i Rust wskazują szerokie możliwości wykorzystania AI w działaniach marketingowych (Huang i Rust 2021), przy czym obejmują one analizowanie informacji i wspieranie wyboru odpowiednich działań wobec odbiorców. W praktyce należy jednak oddzielić przewidywanie zachowania od przewidywania skutku interwencji. Klient prawdopodobnie dokonujący zakupu nie musi potrzebować dodatkowej zachęty cenowej. Przyznanie mu rabatu może obniżyć marżę bez zmiany decyzji zakupowej.
 
 Ocena modelu wymaga poprawnego podziału danych używanych podczas jego przygotowania. Informacje powstałe po przewidywanym zdarzeniu nie powinny pomagać w odtwarzaniu wcześniejszej decyzji. Przykładowo potwierdzenie płatności nie może służyć do przewidywania zakupu przed złożeniem zamówienia. Taki błąd tworzyłby pozornie wysoką skuteczność rozwiązania na danych historycznych. Podczas rzeczywistego działania sklepu odpowiednia informacja nie byłaby jeszcze dostępna.
 
@@ -240,9 +243,9 @@ Personalizacja obsługi pojawia się wtedy, gdy odpowiedź uwzględnia właściw
 
 W prostych zgłoszeniach przydatne bywają krótkie, jednoznaczne odpowiedzi oparte na danych systemowych, co dotyczy statusu przesyłki, godzin kontaktu albo sposobu pobrania dokumentu sprzedaży. Bardziej złożone pytania wymagają interpretacji kilku informacji i uwzględnienia wyjątków. W takich sytuacjach potrzebna jest możliwość przekazania rozmowy do pracownika. Personalizacja powinna ułatwiać to przekazanie wraz z dotychczasowym kontekstem zgłoszenia.
 
-Badanie Luo i współautorów pokazuje znaczenie ujawnienia, że rozmówcą jest chatbot (Luo i in., 2019). Wskazuje ono, że sposób przedstawienia systemu może wpływać na zachowanie odbiorców, nie stanowi jednak uzasadnienia dla ukrywania automatycznego charakteru obsługi. Wdrożenie wymaga uwzględnienia obowiązków informacyjnych oraz długoterminowego zaufania klientów. Wynik pojedynczego badania sprzedażowego nie rozstrzyga wszystkich kwestii prawnych i etycznych.
+Badanie Luo i współautorów pokazuje znaczenie ujawnienia, że rozmówcą jest chatbot (Luo et al. 2019). Wskazuje ono, że sposób przedstawienia systemu może wpływać na zachowanie odbiorców, nie stanowi jednak uzasadnienia dla ukrywania automatycznego charakteru obsługi. Wdrożenie wymaga uwzględnienia obowiązków informacyjnych oraz długoterminowego zaufania klientów. Wynik pojedynczego badania sprzedażowego nie rozstrzyga wszystkich kwestii prawnych i etycznych.
 
-Adam, Wessel i Benlian analizują zachowanie użytkowników w kontakcie z chatbotami obsługowymi (Adam, Wessel, Benlian, 2021). Ich perspektywa wskazuje na znaczenie sposobu projektowania interakcji z systemem. Nie wystarcza zatem samo udostępnienie mechanizmu generującego odpowiedzi na pytania, przy czym ważne są czytelność rozmowy, oczekiwania odbiorcy oraz charakter wykonywanego zadania. Zachowania zaobserwowane w określonym badaniu należy interpretować w jego granicach.
+Adam, Wessel i Benlian analizują zachowanie użytkowników w kontakcie z chatbotami obsługowymi (Adam et al. 2021). Ich perspektywa wskazuje na znaczenie sposobu projektowania interakcji z systemem. Nie wystarcza zatem samo udostępnienie mechanizmu generującego odpowiedzi na pytania, przy czym ważne są czytelność rozmowy, oczekiwania odbiorcy oraz charakter wykonywanego zadania. Zachowania zaobserwowane w określonym badaniu należy interpretować w jego granicach.
 
 Błędy generatywnego chatbota mogą być trudne do rozpoznania przez klienta. Odpowiedź bywa poprawna językowo, mimo że zawiera nieprawdziwe informacje o produkcie. Szczególnie ryzykowne są pomyłki dotyczące bezpieczeństwa użytkowania, płatności lub uprawnień konsumenta. System powinien korzystać z zatwierdzonych materiałów i sygnalizować brak pewnej odpowiedzi, dlatego konieczne jest również monitorowanie zgłoszeń ujawniających powtarzające się problemy.
 
@@ -270,9 +273,9 @@ Wdrożenie personalizacji wymaga połączenia modelu z procesami działającymi 
 
 Przepływ informacji można przedstawić jako kilka powiązanych etapów. Najpierw określa się dopuszczalne dane i sposób rejestrowania zdarzeń. Następnie przygotowuje się cechy potrzebne modelowi oraz wybiera odpowiednie działanie. Wynik trafia do witryny lub systemu obsługi przez ustalony interfejs. Reakcja użytkownika może później służyć ocenie jakości, zgodnie z przyjętymi zasadami przetwarzania.
 
-Tabela 3.2 porządkuje proponowane miary oceny i wskazuje ryzyko ich niewłaściwego interpretowania.
+Tabela 3 porządkuje proponowane miary oceny i wskazuje ryzyko ich niewłaściwego interpretowania.
 
-**Tabela 3.2. Proponowane kryteria oceny wdrożenia personalizacji**
+**Tabela 3. Proponowane kryteria oceny wdrożenia personalizacji**
 
 | Cel | Przykładowa miara | Potrzebne doprecyzowanie | Możliwe błędne odczytanie |
 |---|---|---|---|
@@ -289,9 +292,9 @@ Podczas porównywania wariantów można wykorzystać test A/B z odpowiednim podz
 
 Istotna jest również możliwość bezpiecznego działania podczas awarii modelu lub usługi zewnętrznej. Sklep powinien zachować podstawowe wyszukiwanie, zakup i dostęp do informacji o zamówieniu. Zapasowy wariant może korzystać z ogólnych rekomendacji albo standardowej kolejności produktów. Klient nie powinien tracić możliwości wykonania podstawowej czynności przez niedostępność personalizacji. Takie rozwiązanie ogranicza wpływ awarii na ciągłość obsługi.
 
-NIST zaleca zarządzanie ryzykiem AI przez cały cykl działania systemu (NIST, 2023). Obejmuje ono odpowiedzialność, poznanie kontekstu, pomiar oraz reagowanie na problemy. W przedsiębiorstwie należy wskazać osoby zatwierdzające zmiany i analizujące reklamacje. Powinny one mieć możliwość wyłączenia funkcji powodującej nieakceptowalne skutki dla klientów.
+NIST zaleca zarządzanie ryzykiem AI przez cały cykl działania systemu (NIST 2023). Obejmuje ono odpowiedzialność, poznanie kontekstu, pomiar oraz reagowanie na problemy. W przedsiębiorstwie należy wskazać osoby zatwierdzające zmiany i analizujące reklamacje. Powinny one mieć możliwość wyłączenia funkcji powodującej nieakceptowalne skutki dla klientów.
 
-# ROZDZIAŁ 4. ZACHOWANIA KONSUMENTÓW ORAZ UWARUNKOWANIA PERSONALIZACJI
+# 4. ZACHOWANIA KONSUMENTÓW ORAZ UWARUNKOWANIA PERSONALIZACJI
 
 ## 4.1. Wpływ dopasowania na decyzje zakupowe
 
@@ -301,7 +304,7 @@ Kolejność ofert wpływa na to, z jakimi informacjami odbiorca zetknie się naj
 
 Personalizacja może zmniejszać koszt poszukiwania informacji potrzebnych do podjęcia decyzji. Klient nie musi za każdym razem rozpoczynać od pełnej listy asortymentu. Możliwe staje się także przedstawienie wyjaśnienia odpowiadającego aktualnie rozpatrywanemu problemowi, jednak zbyt silne dopasowanie może ograniczyć kontakt z nowymi kategoriami. Potrzebna pozostaje możliwość samodzielnego zmieniania filtrów oraz przeglądania szerszej oferty.
 
-Badania reklamy personalizowanej pokazują znaczenie czasu i miejsca przedstawienia komunikatu (Bleier, Eisenbeiss, 2015). Dopasowana treść nie wywołuje jednakowego skutku w każdej sytuacji kontaktu. Wynik może zależeć od etapu poszukiwania informacji i celu korzystania ze strony, nie jest więc uzasadnione uznawanie większej szczegółowości za zawsze korzystną. Projekt powinien uwzględniać zarówno informacyjność komunikatu, jak też odczuwaną przez odbiorcę natarczywość.
+Badania reklamy personalizowanej pokazują znaczenie czasu i miejsca przedstawienia komunikatu (Bleier i Eisenbeiss 2015). Dopasowana treść nie wywołuje jednakowego skutku w każdej sytuacji kontaktu. Wynik może zależeć od etapu poszukiwania informacji i celu korzystania ze strony, nie jest więc uzasadnione uznawanie większej szczegółowości za zawsze korzystną. Projekt powinien uwzględniać zarówno informacyjność komunikatu, jak też odczuwaną przez odbiorcę natarczywość.
 
 W ocenie decyzji zakupowych należy rozdzielać zainteresowanie, zamiar i faktyczne zachowanie. Kliknięcie rekomendacji informuje o wejściu w kontakt z ofertą. Deklaracja chęci zakupu opisuje nastawienie, lecz nie potwierdza przeprowadzenia transakcji. Zakup z kolei nie przesądza o późniejszym zadowoleniu z produktu. Każdy z tych wyników odpowiada innemu etapowi relacji.
 
@@ -317,17 +320,17 @@ Satysfakcja odnosi się do oceny doświadczenia względem oczekiwań klienta, ob
 
 Zaufanie wiąże się z przekonaniem, że sklep działa w sposób wiarygodny i przewidywalny. W kontekście AI obejmuje również odpowiednie posługiwanie się informacjami o odbiorcy. Klient może akceptować wykorzystanie danych potrzebnych do realizacji zamówienia, a jednocześnie może nie oczekiwać ich zastosowania do szczegółowego przewidywania sytuacji osobistej. Niespodziewane wykorzystanie informacji może osłabiać ocenę nawet poprawnie działającego systemu.
 
-Paradoks personalizacji polega na współwystępowaniu możliwej korzyści i poczucia utraty prywatności. Zbieranie informacji pomaga dopasować komunikat, ale może też zwiększać niepokój odbiorcy. Aguirre i współautorzy analizują tę zależność z uwzględnieniem sposobu pozyskiwania danych (Aguirre i in., 2015). Wnioskiem dla zarządzania jest potrzeba budowania zaufania równolegle z rozwijaniem dopasowania, jednak sam wzrost zdolności przewidywania nie zapewnia akceptacji klienta.
+Paradoks personalizacji polega na współwystępowaniu możliwej korzyści i poczucia utraty prywatności. Zbieranie informacji pomaga dopasować komunikat, ale może też zwiększać niepokój odbiorcy. Aguirre i współautorzy analizują tę zależność z uwzględnieniem sposobu pozyskiwania danych (Aguirre et al. 2015). Wnioskiem dla zarządzania jest potrzeba budowania zaufania równolegle z rozwijaniem dopasowania, jednak sam wzrost zdolności przewidywania nie zapewnia akceptacji klienta.
 
 Lojalność może oznaczać postawę wobec sklepu albo rzeczywiste powtarzanie zakupów. Te dwa aspekty nie zawsze występują jednocześnie u konkretnej osoby. Klient może wracać z powodu niskiej ceny mimo przeciętnej oceny obsługi, ale może również wysoko oceniać sklep, lecz nie mieć potrzeby kolejnego zakupu. W badaniu trzeba więc jasno określić, jaki wymiar lojalności jest rozpatrywany.
 
 Wskaźnik powrotów wymaga dodatkowo ustalenia okresu oraz rodzaju oferowanych produktów. Oczekiwanie kolejnego zakupu w ciągu miesiąca jest inne dla żywności i mebli. Porównywanie takich kategorii bez odpowiedniego kontekstu może prowadzić do błędnych wniosków. Podobnie zmiana liczby klientów nie wyjaśnia samodzielnie jakości ich relacji, dlatego potrzebne jest powiązanie wyników z charakterem działalności przedsiębiorstwa.
 
-Z punktu widzenia CRM personalizacja powinna wspierać tworzenie wartości w dłuższym okresie (Payne, Frow, 2005), co oznacza uwzględnianie kosztu utraty zaufania oraz niezadowolenia po zakupie. Krótkotrwała poprawa sprzedaży może współistnieć ze wzrostem rezygnacji z komunikacji, dlatego ocena powinna obejmować zestaw uzupełniających się miar. Jedna liczba nie wystarcza do opisania całej relacji klienta ze sklepem.
+Z punktu widzenia CRM personalizacja powinna wspierać tworzenie wartości w dłuższym okresie (Payne i Frow 2005), co oznacza uwzględnianie kosztu utraty zaufania oraz niezadowolenia po zakupie. Krótkotrwała poprawa sprzedaży może współistnieć ze wzrostem rezygnacji z komunikacji, dlatego ocena powinna obejmować zestaw uzupełniających się miar. Jedna liczba nie wystarcza do opisania całej relacji klienta ze sklepem.
 
 ## 4.3. Prywatność, profilowanie i obowiązki informacyjne
 
-Podstawowe znaczenie dla przetwarzania danych osobowych w Unii Europejskiej ma RODO. Definicja danych osobowych obejmuje informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby. Identyfikator użytkownika może zatem mieć taki charakter także bez podania jego nazwiska. Ocena zależy od możliwości powiązania informacji z konkretnym człowiekiem. Zasady przetwarzania określa między innymi art. 5 rozporządzenia (Parlament Europejski i Rada, 2016).
+Podstawowe znaczenie dla przetwarzania danych osobowych w Unii Europejskiej ma RODO. Definicja danych osobowych obejmuje informacje dotyczące zidentyfikowanej lub możliwej do zidentyfikowania osoby. Identyfikator użytkownika może zatem mieć taki charakter także bez podania jego nazwiska. Ocena zależy od możliwości powiązania informacji z konkretnym człowiekiem. Zasady przetwarzania określa między innymi art. 5 rozporządzenia (Dz.Urz. UE L 119 z 2016 r., s. 1).
 
 W personalizacji szczególnie ważne są ograniczenie celu oraz minimalizacja zakresu danych. Przedsiębiorstwo powinno określić, do czego potrzebuje informacji i dlaczego wybrany zakres jest odpowiedni. Możliwość technicznego zebrania danych nie stanowi samodzielnego uzasadnienia ich przetwarzania. Historię zakupów należy rozpatrywać inaczej niż informacje zbierane dla konkretnej reklamacji. Każdy cel wymaga właściwej oceny podstawy prawnej i obowiązków wobec klienta.
 
@@ -337,13 +340,13 @@ Profilowanie ma w RODO określone znaczenie związane z automatyczną oceną czy
 
 Odrębnego rozpatrzenia wymaga art. 22 dotyczący określonych decyzji podejmowanych wyłącznie automatycznie, przy czym znaczenie mają skutki prawne albo podobnie istotny wpływ na osobę. Nie można zakładać, że każda zwykła rekomendacja spełnia te warunki. Z drugiej strony poważniejsze rozstrzygnięcia wymagają dokładnej oceny sposobu działania systemu. Sam udział modelu nie przesądza więc ani o stosowaniu przepisu, ani o jego braku.
 
-Cookies i podobne mechanizmy należy analizować także w kontekście przepisów komunikacji elektronicznej. Na poziomie unijnym znaczenie ma dyrektywa o prywatności i łączności elektronicznej. W Polsce odpowiednie regulacje zawiera Prawo komunikacji elektronicznej, w tym art. 399 (Parlament Europejski i Rada, 2002; Sejm RP, 2024). Należy odróżnić dostęp do informacji na urządzeniu od późniejszego przetwarzania danych osobowych. Wyjątki dotyczące niezbędnych operacji nie obejmują automatycznie każdego narzędzia marketingowego.
+Cookies i podobne mechanizmy należy analizować także w kontekście przepisów komunikacji elektronicznej. Na poziomie unijnym znaczenie ma dyrektywa o prywatności i łączności elektronicznej. W Polsce odpowiednie regulacje zawiera Prawo komunikacji elektronicznej, w tym art. 399 (Dz.Urz. UE L 201 z 2002 r., s. 37; Dz.U. z 2024 r., poz. 1221). Należy odróżnić dostęp do informacji na urządzeniu od późniejszego przetwarzania danych osobowych. Wyjątki dotyczące niezbędnych operacji nie obejmują automatycznie każdego narzędzia marketingowego.
 
 Klient powinien otrzymywać informacje umożliwiające zrozumienie najważniejszych zasad przetwarzania jego danych. Rozbudowany dokument nie spełni praktycznej funkcji, jeżeli komunikaty pozostają niejasne. Szczególnie istotne jest czytelne wyjaśnienie celu oraz dostępnych praw. Interfejs powinien umożliwiać wykonanie wyboru bez niepotrzebnego utrudniania rezygnacji. Takie rozwiązanie łączy formalny obowiązek z rzeczywistą kontrolą użytkownika.
 
-Personalizacja ceny wymaga dodatkowo uwzględnienia obowiązków informacyjnych wynikających z prawa konsumenckiego. Dyrektywa 2011/83/UE przewiduje informację o cenie spersonalizowanej na podstawie zautomatyzowanego podejmowania decyzji. Obowiązek wskazano w art. 6 ust. 1 lit. ea, w odpowiednim zakresie stosowania, co nie oznacza obowiązku nazywania każdej promocji ceną indywidualnie dopasowaną (Parlament Europejski i Rada, 2011). Trzeba najpierw ustalić, jaki mechanizm rzeczywiście zastosowano w ofercie.
+Personalizacja ceny wymaga dodatkowo uwzględnienia obowiązków informacyjnych wynikających z prawa konsumenckiego. Dyrektywa 2011/83/UE przewiduje informację o cenie spersonalizowanej na podstawie zautomatyzowanego podejmowania decyzji. Obowiązek wskazano w art. 6 ust. 1 lit. ea, w odpowiednim zakresie stosowania, co nie oznacza obowiązku nazywania każdej promocji ceną indywidualnie dopasowaną (Dz.Urz. UE L 304 z 2011 r., s. 64). Trzeba najpierw ustalić, jaki mechanizm rzeczywiście zastosowano w ofercie.
 
-Kolejnym punktem odniesienia jest rozporządzenie dotyczące sztucznej inteligencji, określane jako AI Act, przy czym obejmuje ono różne obowiązki zależne od rodzaju systemu i roli podmiotu. Samo wykorzystanie AI w sklepie nie przesądza o klasyfikacji wysokiego ryzyka. Dla systemów przeznaczonych do interakcji z ludźmi znaczenie ma między innymi art. 50. Należy uwzględniać przewidziane warunki, wyjątki oraz harmonogram stosowania przepisów (Parlament Europejski i Rada, 2024).
+Kolejnym punktem odniesienia jest rozporządzenie dotyczące sztucznej inteligencji, określane jako AI Act, przy czym obejmuje ono różne obowiązki zależne od rodzaju systemu i roli podmiotu. Samo wykorzystanie AI w sklepie nie przesądza o klasyfikacji wysokiego ryzyka. Dla systemów przeznaczonych do interakcji z ludźmi znaczenie ma między innymi art. 50. Należy uwzględniać przewidziane warunki, wyjątki oraz harmonogram stosowania przepisów (Dz.Urz. UE L z 2024 r., poz. 2024/1689).
 
 Przywołane regulacje służą wskazaniu problemów związanych z personalizacją, a nie ocenie zgodności konkretnych przedsiębiorstw. Taka ocena wymagałaby dostępu do dokumentacji i rzeczywistego przebiegu przetwarzania informacji. W analizie przypadków nie przyjęto zatem, że sama dostępność funkcji dowodzi zgodności prawnej, ani nie uznano każdego wykorzystania danych za naruszenie prywatności. Ocenie podlegają rozpoznane mechanizmy i związane z nimi wymagania.
 
@@ -351,7 +354,7 @@ Przywołane regulacje służą wskazaniu problemów związanych z personalizacj�
 
 Ocena etyczna wykracza poza samo stwierdzenie zgodności z konkretnym przepisem. Działanie może być formalnie dopuszczalne, a mimo to odbierane jako niesprawiedliwe. Dotyczy to zwłaszcza sytuacji, gdy klient nie rozumie przyczyny przedstawionej propozycji. Sklep powinien rozpatrywać, czy personalizacja pomaga podejmować świadomą decyzję, przy czym ważne jest także zachowanie możliwości odmowy i wyboru innych rozwiązań.
 
-Efekt inwigilacji oznacza poczucie, że przedsiębiorstwo wie o użytkowniku zbyt wiele. Może pojawić się przy wyjątkowo szczegółowej reklamie albo przypomnieniu dotyczącym wrażliwego tematu, co nie oznacza automatycznie wykazania naruszenia prawa przez sklep. Jest jednak sygnałem problemu z akceptacją sposobu wykorzystywania informacji. Badania paradoksu personalizacji uzasadniają uwzględnienie takiej reakcji w projektowaniu komunikacji (Aguirre i in., 2015).
+Efekt inwigilacji oznacza poczucie, że przedsiębiorstwo wie o użytkowniku zbyt wiele. Może pojawić się przy wyjątkowo szczegółowej reklamie albo przypomnieniu dotyczącym wrażliwego tematu, co nie oznacza automatycznie wykazania naruszenia prawa przez sklep. Jest jednak sygnałem problemu z akceptacją sposobu wykorzystywania informacji. Badania paradoksu personalizacji uzasadniają uwzględnienie takiej reakcji w projektowaniu komunikacji (Aguirre et al. 2015).
 
 Innym zagrożeniem jest zawężanie prezentowanego wyboru na podstawie dotychczasowych zainteresowań. W pracy określa się je roboczo jako bańkę zakupową, a klient może stale otrzymywać podobne propozycje, mimo zmiany swoich potrzeb. Nie jest to jednak nieunikniona cecha każdego systemu rekomendacyjnego. Stopień różnorodności zależy również od celu i zasad doboru ofert.
 
@@ -375,7 +378,7 @@ Do barier wdrożenia należą również koszty, jakość katalogu oraz kompetenc
 
 W małym sklepie ważne staje się porównanie kosztu utrzymania z oczekiwanym efektem. Opłaty za usługę, integracja oraz kontrola odpowiedzi tworzą łączne obciążenie organizacji. Wdrożenie powinno zaczynać się od zadania o czytelnej wartości i ograniczonym ryzyku, na przykład pomocy w wyszukiwaniu informacji lub rekomendacji akcesoriów. Rozszerzanie zakresu wymaga wyników uzasadniających kolejne nakłady.
 
-# ROZDZIAŁ 5. ANALIZA WYBRANYCH PRZYPADKÓW
+# 5. ANALIZA WYBRANYCH PRZYPADKÓW
 
 ## 5.1. Kryteria doboru i zakres porównania
 
@@ -389,13 +392,13 @@ Analiza obejmuje problem klienta, wykorzystywany mechanizm, źródła informacji
 
 ## 5.2. Amazon: od podobieństwa produktów do rozmowy zakupowej
 
-Artykuł Lindena, Smitha i Yorka przedstawia sposób tworzenia rekomendacji wykorzystujący podobieństwo produktów. Głównym problemem była obsługa dużej liczby klientów oraz rozbudowanego katalogu oferty. Porównywanie każdego użytkownika ze wszystkimi pozostałymi tworzyło ograniczenia wydajnościowe. Autorzy opisali podejście koncentrujące się na relacjach między przedmiotami (Linden, Smith, York, 2003). Przygotowane powiązania można było wykorzystać do dopasowywania propozycji podczas kontaktu z klientem.
+Artykuł Lindena, Smitha i Yorka przedstawia sposób tworzenia rekomendacji wykorzystujący podobieństwo produktów. Głównym problemem była obsługa dużej liczby klientów oraz rozbudowanego katalogu oferty. Porównywanie każdego użytkownika ze wszystkimi pozostałymi tworzyło ograniczenia wydajnościowe. Autorzy opisali podejście koncentrujące się na relacjach między przedmiotami (Linden et al. 2003). Przygotowane powiązania można było wykorzystać do dopasowywania propozycji podczas kontaktu z klientem.
 
 Z perspektywy odbiorcy znaczenie miało ograniczenie wysiłku potrzebnego do odkrycia kolejnych produktów. Rekomendacja mogła wskazywać przedmioty związane z dotychczasowym zainteresowaniem lub historią zakupów. Nie wymagało to ręcznego opisania wszystkich preferencji przez użytkownika, a jednocześnie system korzystał z pośrednich sygnałów, które mogły być niejednoznaczne. Historia zakupu nie wyjaśniała na przykład, czy produkt przeznaczono dla kupującego.
 
 Opisane rozwiązanie pokazuje związek między architekturą techniczną a możliwością prowadzenia personalizacji. Nawet trafna metoda nie spełni zadania, jeśli działa zbyt wolno podczas wizyty. Wydajność jest więc warunkiem udostępnienia propozycji we właściwym momencie procesu zakupowego, nie oznacza jednak automatycznie wzrostu zaufania ani długoterminowej lojalności. Artykuł techniczny nie stanowi samodzielnego dowodu takich skutków relacyjnych.
 
-Inny sposób wspierania zakupów przedstawiono w komunikacie dotyczącym asystenta Rufus. Amazon opisał możliwość zadawania pytań o potrzeby, kategorie oraz konkretne produkty (Amazon, 2024). Wskazano wykorzystanie katalogu, opinii klientów, pytań społeczności i informacji z Internetu. Odpowiedzi miały uwzględniać kontekst prowadzonej rozmowy i pomagać porównywać dostępne możliwości. Był to opis funkcji rozwijanej początkowo w wersji testowej.
+Inny sposób wspierania zakupów przedstawiono w komunikacie dotyczącym asystenta Rufus. Amazon opisał możliwość zadawania pytań o potrzeby, kategorie oraz konkretne produkty (www.aboutamazon.com/news/retail/amazon-rufus). Wskazano wykorzystanie katalogu, opinii klientów, pytań społeczności i informacji z Internetu. Odpowiedzi miały uwzględniać kontekst prowadzonej rozmowy i pomagać porównywać dostępne możliwości. Był to opis funkcji rozwijanej początkowo w wersji testowej.
 
 Klient może w takim modelu rozpocząć kontakt od określenia planowanej aktywności, ale nie musi znać dokładnej nazwy produktu ani pełnego zestawu parametrów wyszukiwania. Kolejne pytania pozwalają doprecyzować oczekiwania oraz zawęzić listę odpowiednich propozycji. Personalizacja opiera się wtedy także na informacji przekazanej świadomie podczas rozmowy. Jest to inny rodzaj kontekstu niż sama historia wcześniejszych kliknięć.
 
@@ -407,7 +410,7 @@ Przypadek Amazon pokazuje przejście między dwoma sposobami pozyskiwania kontek
 
 ## 5.3. Zalando: interpretacja potrzeby w kontekście mody
 
-W zakupach odzieżowych klient często rozpoczyna od okazji, stylu albo oczekiwanego efektu. Parametry katalogowe nie zawsze odpowiadają językowi używanemu podczas opisywania takiej potrzeby, a użytkownik może wiedzieć, na jakie wydarzenie szuka stroju, bez wskazania konkretnego fasonu. Powstaje wtedy potrzeba przełożenia opisu sytuacji na odpowiednie propozycje produktów. Temu problemowi odpowiadał zapowiedziany przez Zalando asystent wykorzystujący ChatGPT (Zalando, 2023).
+W zakupach odzieżowych klient często rozpoczyna od okazji, stylu albo oczekiwanego efektu. Parametry katalogowe nie zawsze odpowiadają językowi używanemu podczas opisywania takiej potrzeby, a użytkownik może wiedzieć, na jakie wydarzenie szuka stroju, bez wskazania konkretnego fasonu. Powstaje wtedy potrzeba przełożenia opisu sytuacji na odpowiednie propozycje produktów. Temu problemowi odpowiadał zapowiedziany przez Zalando asystent wykorzystujący ChatGPT (corporate.zalando.com/en/technology/zalando-launch-fashion-assistant-powered-chatgpt).
 
 Komunikat przedstawiał możliwość wyszukiwania przy użyciu własnych słów i określeń związanych z modą. Jako przykład podano pytanie o strój na ślub na Santorini w lipcu. Kontekst obejmował więc rodzaj wydarzenia, miejsce oraz porę roku. Asystent miał przygotować wyjaśnienie i propozycje odpowiadające tak opisanej sytuacji. Przykład prezentuje deklarowany scenariusz funkcji, a nie wynik niezależnego badania jej skuteczności.
 
@@ -423,15 +426,15 @@ Z perspektywy zarządzania przypadek ten pokazuje znaczenie języka właściwego
 
 ## 5.4. Allegro: ocena trafności jako warunek użytecznego dopasowania
 
-Na platformie obejmującej wiele kategorii problemem jest także ocena jakości wyników wyszukiwania, jednak sama liczba kliknięć nie wyjaśnia, czy produkty odpowiadają znaczeniu konkretnego zapytania. Artykuł Marhuli i Sidora opisuje wykorzystanie modeli językowych do wspierania takiej oceny. Przedstawiono narzędzie Relevance Assessment Tool oraz proces przygotowania danych odniesienia (Marhula, Sidor, 2026). Materiał pochodzi od zespołu technicznego przedsiębiorstwa i opisuje jego doświadczenia.
+Na platformie obejmującej wiele kategorii problemem jest także ocena jakości wyników wyszukiwania, jednak sama liczba kliknięć nie wyjaśnia, czy produkty odpowiadają znaczeniu konkretnego zapytania. Artykuł Marhuli i Sidora opisuje wykorzystanie modeli językowych do wspierania takiej oceny. Przedstawiono narzędzie Relevance Assessment Tool oraz proces przygotowania danych odniesienia (blog.allegro.tech/2026/08/automating-search-relevance-llm-as-a-judge.html). Materiał pochodzi od zespołu technicznego przedsiębiorstwa i opisuje jego doświadczenia.
 
 Autorzy zwracają uwagę na niejednoznaczność relacji między zapytaniem a przedstawionym produktem. Oferta może dokładnie odpowiadać potrzebie, stanowić zamiennik albo jedynie produkt uzupełniający. W innych sytuacjach okazuje się nieistotna lub trudna do jednoznacznej oceny. Przygotowanie wspólnych zasad klasyfikacji wymaga więc wiedzy o różnych kategoriach asortymentu, jednak nie wystarcza automatyczne porównanie podobieństwa użytych słów.
 
 Opisany proces wykorzystywał ocenę ludzi oraz rozstrzyganie rozbieżności przez ekspertów. Na tej podstawie przygotowano materiał służący porównywaniu rezultatów modeli językowych. Jest to ważne, ponieważ sam model nie powinien wyznaczać jednocześnie kryterium i oceniać własnej poprawności. Potrzebny pozostaje punkt odniesienia związany z rzeczywistym znaczeniem wyszukiwanego produktu. Dokument pokazuje zatem rolę pracy ludzkiej w przygotowaniu automatycznej oceny.
 
-W tabeli 5.1 przytoczono wybrane wyniki pozwalające porównać trudność rozpoznawania poszczególnych klas trafności.
+W tabeli 4 przytoczono wybrane wyniki pozwalające porównać trudność rozpoznawania poszczególnych klas trafności.
 
-**Tabela 5.1. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro**
+**Tabela 4. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro**
 
 | Klasa relacji produktu do zapytania | Wartość F1 | Liczba przykładów w pokazanym zbiorze |
 |---|---:|---:|
@@ -453,9 +456,9 @@ Wnioskiem z tego przypadku jest potrzeba łączenia różnych rodzajów pomiaru.
 
 Przedstawione rozwiązania różnią się miejscem, w którym AI wspiera kontakt z ofertą. Amazon pokazuje rekomendowanie na podstawie powiązań produktów oraz kontekst rozmowy zakupowej. Zalando koncentruje się na interpretowaniu potrzeby wyrażonej językiem związanym z modą. Allegro przedstawia automatyczną ocenę jakości dopasowania wyników do treści zapytania. W każdym przypadku użyteczność zależy od odpowiedniego połączenia danych i celu zadania.
 
-Tabela 5.2 zestawia rodzaje dostępnych dowodów oraz granice wnioskowania dla analizowanych przypadków.
+Tabela 5 zestawia rodzaje dostępnych dowodów oraz granice wnioskowania dla analizowanych przypadków.
 
-**Tabela 5.2. Porównanie zakresu dowodów w analizowanych przypadkach**
+**Tabela 5. Porównanie zakresu dowodów w analizowanych przypadkach**
 
 | Przypadek | Główna funkcja | Potwierdzony zakres materiału | Czego materiał nie rozstrzyga |
 |---|---|---|---|
@@ -475,7 +478,6 @@ Trzeci wniosek dotyczy ograniczeń dostępnych dowodów skuteczności. Analizowa
 Dla mniejszego sklepu praktyczne znaczenie ma rozpoczęcie od jasno rozpoznanego problemu klienta, na przykład trudności wyboru akcesorium, odnalezienia informacji albo opisania potrzeby. Następnie należy określić dostępne dane i prosty punkt odniesienia dla przyszłej oceny, dlatego dopiero wtedy uzasadniony staje się wybór modelu oraz zakresu automatyzacji. Odwrócenie tej kolejności zwiększa ryzyko wdrożenia funkcji o niewielkiej wartości.
 
 Analiza wspiera również potrzebę pozostawienia klientowi możliwości korekty działania systemu, co dotyczy zmiany zapytania, pominięcia nietrafnej kategorii albo przejścia do zwykłego wyszukiwania. W obsłudze reklamacji znaczenie ma dodatkowo dostęp do pracownika. Kontrola użytkownika nie wyklucza personalizacji, lecz pomaga ograniczać skutki błędnych założeń. Właśnie takie połączenie technologii i odpowiedzialnego procesu sprzyja użyteczności rozwiązań.
-
 
 # ZAKOŃCZENIE
 
@@ -499,70 +501,86 @@ Dalsze badania mogłyby porównać doświadczenia klientów korzystających z r�
 
 Z perspektywy zarządzania najważniejsze jest powiązanie wdrożenia z konkretną potrzebą klienta. Technologia powinna zmniejszać jego wysiłek, poprawiać jakość informacji i ułatwiać rozwiązanie sprawy, co wymaga kontroli wyników oraz współpracy zespołów technicznych, marketingowych i obsługowych. Personalizacja oparta na AI może wtedy wspierać relacje w handlu internetowym. Jej wartość zależy jednak od sposobu wykorzystania, a nie samego zastosowania algorytmu.
 
-
 # BIBLIOGRAFIA
 
-1. Abadi, M. i in. (2016). TensorFlow: A System for Large-Scale Machine Learning. W: 12th USENIX Symposium on Operating Systems Design and Implementation, s. 265–283. https://arxiv.org/abs/1605.08695
+## Książki i opracowania zwarte
 
-2. Adam, M., Wessel, M., Benlian, A. (2021). AI-based chatbots in customer service and their effects on user compliance. Electronic Markets, 31, s. 427–445. https://doi.org/10.1007/s12525-020-00414-7
+1\. OECD. 2019. *Unpacking E-commerce: Business Models, Trends and Policies*, OECD Publishing, Paryż. https://doi.org/10.1787/23561431-en.
 
-3. Adomavicius, G., Tuzhilin, A. (2005). Toward the Next Generation of Recommender Systems: A Survey of the State-of-the-Art and Possible Extensions. IEEE Transactions on Knowledge and Data Engineering, 17(6), s. 734–749. https://doi.org/10.1109/TKDE.2005.99
+## Artykuły w czasopismach
 
-4. Aguirre, E., Mahr, D., Grewal, D., de Ruyter, K., Wetzels, M. (2015). Unraveling the Personalization Paradox: The Effect of Information Collection and Trust-Building Strategies on Online Advertisement Effectiveness. Journal of Retailing, 91(1), s. 34–49. https://doi.org/10.1016/j.jretai.2014.09.005
+2\. Adam M., Wessel M., Benlian A. 2021. AI-based chatbots in customer service and their effects on user compliance, *Electronic Markets*, 31, 427–445. https://doi.org/10.1007/s12525-020-00414-7.
 
-5. Amazon (2024). Amazon announces Rufus, a new generative AI-powered conversational shopping experience. About Amazon, tekst R. Mehty i T. Chilimbiego. https://www.aboutamazon.com/news/retail/amazon-rufus (dostęp: 08.10.2026). Strona zawiera późniejszą informację o zmianie nazwy w maju 2026 roku.
+3\. Adomavicius G., Tuzhilin A. 2005. Toward the Next Generation of Recommender Systems: A Survey of the State-of-the-Art and Possible Extensions, *IEEE Transactions on Knowledge and Data Engineering*, 17(6), 734–749. https://doi.org/10.1109/TKDE.2005.99.
 
-6. Bleier, A., Eisenbeiss, M. (2015). Personalized Online Advertising Effectiveness: The Interplay of What, When, and Where. Marketing Science, 34(5), s. 669–688. https://doi.org/10.1287/mksc.2015.0930
+4\. Aguirre E., Mahr D., Grewal D., de Ruyter K., Wetzels M. 2015. Unraveling the Personalization Paradox: The Effect of Information Collection and Trust-Building Strategies on Online Advertisement Effectiveness, *Journal of Retailing*, 91(1), 34–49. https://doi.org/10.1016/j.jretai.2014.09.005.
 
-7. Huang, M.-H., Rust, R. T. (2021). A Strategic Framework for Artificial Intelligence in Marketing. Journal of the Academy of Marketing Science, 49, s. 30–50. https://doi.org/10.1007/s11747-020-00749-9
+5\. Bleier A., Eisenbeiss M. 2015. Personalized Online Advertising Effectiveness: The Interplay of What, When, and Where, *Marketing Science*, 34(5), 669–688. https://doi.org/10.1287/mksc.2015.0930.
 
-8. Jouppi, N. P. i in. (2017). In-Datacenter Performance Analysis of a Tensor Processing Unit. W: Proceedings of the 44th Annual International Symposium on Computer Architecture, s. 1–12. https://doi.org/10.1145/3079856.3080246; wersja autorska: https://arxiv.org/abs/1704.04760
+6\. Huang M.-H., Rust R. T. 2021. A Strategic Framework for Artificial Intelligence in Marketing, *Journal of the Academy of Marketing Science*, 49, 30–50. https://doi.org/10.1007/s11747-020-00749-9.
 
-9. LeCun, Y., Bengio, Y., Hinton, G. (2015). Deep Learning. Nature, 521, s. 436–444. https://doi.org/10.1038/nature14539
+7\. LeCun Y., Bengio Y., Hinton G. 2015. Deep Learning, *Nature*, 521, 436–444. https://doi.org/10.1038/nature14539.
 
-10. Lemon, K. N., Verhoef, P. C. (2016). Understanding Customer Experience Throughout the Customer Journey. Journal of Marketing, 80(6), s. 69–96. https://doi.org/10.1509/jm.15.0420
+8\. Lemon K. N., Verhoef P. C. 2016. Understanding Customer Experience Throughout the Customer Journey, *Journal of Marketing*, 80(6), 69–96. https://doi.org/10.1509/jm.15.0420.
 
-11. Linden, G., Smith, B., York, J. (2003). Amazon.com Recommendations: Item-to-Item Collaborative Filtering. IEEE Internet Computing, 7(1), s. 76–80. https://doi.org/10.1109/MIC.2003.1167344
+9\. Linden G., Smith B., York J. 2003. Amazon.com Recommendations: Item-to-Item Collaborative Filtering, *IEEE Internet Computing*, 7(1), 76–80. https://doi.org/10.1109/MIC.2003.1167344.
 
-12. Luo, X., Tong, S., Fang, Z., Qu, Z. (2019). Frontiers: Machines vs. Humans: The Impact of Artificial Intelligence Chatbot Disclosure on Customer Purchases. Marketing Science. https://doi.org/10.1287/mksc.2019.1192
+10\. Luo X., Tong S., Fang Z., Qu Z. 2019. Frontiers: Machines vs. Humans: The Impact of Artificial Intelligence Chatbot Disclosure on Customer Purchases, *Marketing Science*. https://doi.org/10.1287/mksc.2019.1192.
 
-13. Marhula, J., Sidor, M. (2026). Automating Search Relevance Assessment at Scale with LLM-as-a-Judge. Allegro Tech, 20.08.2026. https://blog.allegro.tech/2026/08/automating-search-relevance-llm-as-a-judge.html (dostęp: 08.10.2026). Odczytano także źródło publikacji w oficjalnym repozytorium github.com/allegro/blog.
+11\. Payne A., Frow P. 2005. A Strategic Framework for Customer Relationship Management, *Journal of Marketing*, 69(4), 167–176. https://doi.org/10.1509/jmkg.2005.69.4.167.
 
-14. McCarthy, J. (2007). What Is Artificial Intelligence? Stanford University, wersja z 12.11.2007. https://www-formal.stanford.edu/jmc/whatisai/whatisai.html (dostęp: 08.10.2026).
+## Artykuły w materiałach konferencyjnych
 
-15. Mell, P., Grance, T. (2011). The NIST Definition of Cloud Computing. NIST Special Publication 800-145. https://doi.org/10.6028/NIST.SP.800-145
+12\. Abadi M. i in. 2016. TensorFlow: A System for Large-Scale Machine Learning, *12th USENIX Symposium on Operating Systems Design and Implementation*, USENIX Association, Savannah, 265–283. https://arxiv.org/abs/1605.08695 [dostęp: 08.10.2026].
 
-16. NIST (2023). Artificial Intelligence Risk Management Framework (AI RMF 1.0). NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1
+13\. Jouppi N. P. i in. 2017. In-Datacenter Performance Analysis of a Tensor Processing Unit, *Proceedings of the 44th Annual International Symposium on Computer Architecture*, ACM, Toronto, 1–12. https://doi.org/10.1145/3079856.3080246.
 
-17. OECD (2019). Unpacking E-commerce: Business Models, Trends and Policies. Paris: OECD Publishing. https://doi.org/10.1787/23561431-en
+14\. Paszke A. i in. 2019. PyTorch: An Imperative Style, High-Performance Deep Learning Library, *Advances in Neural Information Processing Systems*, 32. https://arxiv.org/abs/1912.01703 [dostęp: 08.10.2026].
 
-18. Parlament Europejski i Rada (2002). Dyrektywa 2002/58/WE z dnia 12 lipca 2002 r. dotycząca przetwarzania danych osobowych i ochrony prywatności w sektorze łączności elektronicznej. Dz.U. UE L 201, s. 37–47, ze zmianami. https://eur-lex.europa.eu/eli/dir/2002/58/oj
+15\. Vaswani A. i in. 2017. Attention Is All You Need, *Advances in Neural Information Processing Systems*, 30. https://arxiv.org/abs/1706.03762 [dostęp: 08.10.2026].
 
-19. Parlament Europejski i Rada (2011). Dyrektywa 2011/83/UE z dnia 25 października 2011 r. w sprawie praw konsumentów. Dz.U. UE L 304, s. 64–88, ze zmianami. Wykorzystana identyfikacja tekstu skonsolidowanego: 02011L0083-20220528. https://eur-lex.europa.eu/legal-content/PL/TXT/?uri=CELEX:02011L0083-20220528
+## Akty prawne
 
-20. Parlament Europejski i Rada (2016). Rozporządzenie (UE) 2016/679 z dnia 27 kwietnia 2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE. Dz.U. UE L 119, s. 1–88. https://eur-lex.europa.eu/eli/reg/2016/679/oj
+16\. Dyrektywa 2002/58/WE Parlamentu Europejskiego i Rady z 12.07.2002 r. dotycząca przetwarzania danych osobowych i ochrony prywatności w sektorze łączności elektronicznej (Dz.Urz. UE L 201, s. 37, ze zm.). https://eur-lex.europa.eu/eli/dir/2002/58/oj [dostęp: 08.10.2026].
 
-21. Parlament Europejski i Rada (2024). Rozporządzenie (UE) 2024/1689 z dnia 13 czerwca 2024 r. w sprawie ustanowienia zharmonizowanych przepisów dotyczących sztucznej inteligencji. Dz.U. UE L, 2024/1689. https://eur-lex.europa.eu/eli/reg/2024/1689/oj
+17\. Dyrektywa 2011/83/UE Parlamentu Europejskiego i Rady z 25.10.2011 r. w sprawie praw konsumentów (Dz.Urz. UE L 304, s. 64, ze zm.). https://eur-lex.europa.eu/eli/dir/2011/83/oj [dostęp: 08.10.2026].
 
-22. Paszke, A. i in. (2019). PyTorch: An Imperative Style, High-Performance Deep Learning Library. Advances in Neural Information Processing Systems, 32. https://arxiv.org/abs/1912.01703
+18\. Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2016/679 z 27.04.2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych (Dz.Urz. UE L 119, s. 1). https://eur-lex.europa.eu/eli/reg/2016/679/oj [dostęp: 08.10.2026].
 
-23. Payne, A., Frow, P. (2005). A Strategic Framework for Customer Relationship Management. Journal of Marketing, 69(4), s. 167–176. https://doi.org/10.1509/jmkg.2005.69.4.167
+19\. Rozporządzenie Parlamentu Europejskiego i Rady (UE) 2024/1689 z 13.06.2024 r. w sprawie ustanowienia zharmonizowanych przepisów dotyczących sztucznej inteligencji (Dz.Urz. UE L z 2024 r., poz. 2024/1689). https://eur-lex.europa.eu/eli/reg/2024/1689/oj [dostęp: 08.10.2026].
 
-24. Sejm RP (2024). Ustawa z dnia 12 lipca 2024 r. – Prawo komunikacji elektronicznej. Dz.U. 2024, poz. 1221. https://dziennikustaw.gov.pl/D2024000122101.pdf
+20\. Ustawa z 12.07.2024 r. – Prawo komunikacji elektronicznej (Dz.U. z 2024 r., poz. 1221). https://dziennikustaw.gov.pl/D2024000122101.pdf [dostęp: 08.10.2026].
 
-25. Vaswani, A. i in. (2017). Attention Is All You Need. Advances in Neural Information Processing Systems, 30. https://arxiv.org/abs/1706.03762
+## Inne źródła: raporty i strony internetowe
 
-26. Zalando (2023). Zalando to launch a fashion assistant powered by ChatGPT. Zalando Corporate, 19.04.2023. https://corporate.zalando.com/en/technology/zalando-launch-fashion-assistant-powered-chatgpt (dostęp: 08.10.2026).
+21\. Amazon. 2024. Amazon announces Rufus, a new generative AI-powered conversational shopping experience. [https:/​/​www.aboutamazon.com/​news/​retail/​amazon‑rufus](https://www.aboutamazon.com/news/retail/amazon-rufus) [dostęp: 08.10.2026].
 
+22\. Marhula J., Sidor M. 2026. Automating Search Relevance Assessment at Scale with LLM‑as‑a‑Judge. [https:/​/​blog.allegro.tech/​2026/​08/​automating‑search‑relevance‑llm‑as‑a‑judge.html](https://blog.allegro.tech/2026/08/automating-search-relevance-llm-as-a-judge.html) [dostęp: 08.10.2026].
+
+23\. McCarthy J. 2007. What Is Artificial Intelligence? Stanford University. [https:/​/​www‑formal.stanford.edu/​jmc/​whatisai/​whatisai.html](https://www-formal.stanford.edu/jmc/whatisai/whatisai.html) [dostęp: 08.10.2026].
+
+24\. Mell P., Grance T. 2011. The NIST Definition of Cloud Computing, NIST Special Publication 800-145. https://doi.org/10.6028/NIST.SP.800-145.
+
+25\. NIST. 2023. Artificial Intelligence Risk Management Framework (AI RMF 1.0), NIST AI 100-1. https://doi.org/10.6028/NIST.AI.100-1.
+
+26\. Zalando. 2023. Zalando to launch a fashion assistant powered by ChatGPT. [https:/​/​corporate.zalando.com/​en/​technology/​zalando‑launch‑fashion‑assistant‑powered‑chatgpt](https://corporate.zalando.com/en/technology/zalando-launch-fashion-assistant-powered-chatgpt) [dostęp: 08.10.2026].
 
 # SPIS TABEL
 
-Tabela 2.1. Personalizacja na kolejnych etapach relacji z klientem — s. 12
+Tabela 1. Personalizacja na kolejnych etapach relacji z klientem — s. 15
 
-Tabela 3.1. Porównanie podstawowych podejść rekomendacyjnych — s. 18
+Tabela 2. Porównanie podstawowych podejść rekomendacyjnych — s. 21
 
-Tabela 3.2. Proponowane kryteria oceny wdrożenia personalizacji — s. 23
+Tabela 3. Proponowane kryteria oceny wdrożenia personalizacji — s. 26
 
-Tabela 5.1. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro — s. 34
+Tabela 4. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro — s. 39
 
-Tabela 5.2. Porównanie zakresu dowodów w analizowanych przypadkach — s. 35
+Tabela 5. Porównanie zakresu dowodów w analizowanych przypadkach — s. 40
+
+# ABSTRACT
+
+**Application of artificial intelligence to personalize relationships with customers of online stores**
+
+This thesis examines the use of artificial intelligence to personalize relationships with customers of online stores. Its aim is to explain how retailers tailor offers, communication, and service, and to assess the benefits and limits of these practices. The method combines a literature review with a comparative analysis of publicly described solutions from Amazon, Zalando, and Allegro. The study discusses recommender systems, predictive analytics, and tools that communicate with customers. It also considers data quality, transparency, privacy, and the reliability of available evidence. The findings suggest that AI can help customers choose products and obtain support. However, relevant suggestions alone do not prove a lasting improvement in customer relationships. Company materials describe system features but rarely allow changes in loyalty to be attributed solely to AI. The thesis proposes evaluating personalization through several measures, including usefulness, service quality, data protection, and customer trust. The conclusions are qualitative because the study did not involve a customer survey or an experiment using customer data.
+
+*Keywords: artificial intelligence, personalization, e‑commerce, customer relationships, recommender systems.*

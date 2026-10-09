@@ -1,4 +1,4 @@
-# ROZDZIAŁ 5. ANALIZA WYBRANYCH PRZYPADKÓW
+# 5. ANALIZA WYBRANYCH PRZYPADKÓW
 
 ## 5.1. Kryteria doboru i zakres porównania
 
@@ -12,13 +12,13 @@ Analiza obejmuje problem klienta, wykorzystywany mechanizm, źródła informacji
 
 ## 5.2. Amazon: od podobieństwa produktów do rozmowy zakupowej
 
-Artykuł Lindena, Smitha i Yorka przedstawia sposób tworzenia rekomendacji wykorzystujący podobieństwo produktów. Głównym problemem była obsługa dużej liczby klientów oraz rozbudowanego katalogu oferty. Porównywanie każdego użytkownika ze wszystkimi pozostałymi tworzyło ograniczenia wydajnościowe. Autorzy opisali podejście koncentrujące się na relacjach między przedmiotami (Linden, Smith, York, 2003). Przygotowane powiązania można było wykorzystać do dopasowywania propozycji podczas kontaktu z klientem.
+Artykuł Lindena, Smitha i Yorka przedstawia sposób tworzenia rekomendacji wykorzystujący podobieństwo produktów. Głównym problemem była obsługa dużej liczby klientów oraz rozbudowanego katalogu oferty. Porównywanie każdego użytkownika ze wszystkimi pozostałymi tworzyło ograniczenia wydajnościowe. Autorzy opisali podejście koncentrujące się na relacjach między przedmiotami (Linden et al. 2003). Przygotowane powiązania można było wykorzystać do dopasowywania propozycji podczas kontaktu z klientem.
 
 Z perspektywy odbiorcy znaczenie miało ograniczenie wysiłku potrzebnego do odkrycia kolejnych produktów. Rekomendacja mogła wskazywać przedmioty związane z dotychczasowym zainteresowaniem lub historią zakupów. Nie wymagało to ręcznego opisania wszystkich preferencji przez użytkownika, a jednocześnie system korzystał z pośrednich sygnałów, które mogły być niejednoznaczne. Historia zakupu nie wyjaśniała na przykład, czy produkt przeznaczono dla kupującego.
 
 Opisane rozwiązanie pokazuje związek między architekturą techniczną a możliwością prowadzenia personalizacji. Nawet trafna metoda nie spełni zadania, jeśli działa zbyt wolno podczas wizyty. Wydajność jest więc warunkiem udostępnienia propozycji we właściwym momencie procesu zakupowego, nie oznacza jednak automatycznie wzrostu zaufania ani długoterminowej lojalności. Artykuł techniczny nie stanowi samodzielnego dowodu takich skutków relacyjnych.
 
-Inny sposób wspierania zakupów przedstawiono w komunikacie dotyczącym asystenta Rufus. Amazon opisał możliwość zadawania pytań o potrzeby, kategorie oraz konkretne produkty (Amazon, 2024). Wskazano wykorzystanie katalogu, opinii klientów, pytań społeczności i informacji z Internetu. Odpowiedzi miały uwzględniać kontekst prowadzonej rozmowy i pomagać porównywać dostępne możliwości. Był to opis funkcji rozwijanej początkowo w wersji testowej.
+Inny sposób wspierania zakupów przedstawiono w komunikacie dotyczącym asystenta Rufus. Amazon opisał możliwość zadawania pytań o potrzeby, kategorie oraz konkretne produkty (www.aboutamazon.com/news/retail/amazon-rufus). Wskazano wykorzystanie katalogu, opinii klientów, pytań społeczności i informacji z Internetu. Odpowiedzi miały uwzględniać kontekst prowadzonej rozmowy i pomagać porównywać dostępne możliwości. Był to opis funkcji rozwijanej początkowo w wersji testowej.
 
 Klient może w takim modelu rozpocząć kontakt od określenia planowanej aktywności, ale nie musi znać dokładnej nazwy produktu ani pełnego zestawu parametrów wyszukiwania. Kolejne pytania pozwalają doprecyzować oczekiwania oraz zawęzić listę odpowiednich propozycji. Personalizacja opiera się wtedy także na informacji przekazanej świadomie podczas rozmowy. Jest to inny rodzaj kontekstu niż sama historia wcześniejszych kliknięć.
 
@@ -30,7 +30,7 @@ Przypadek Amazon pokazuje przejście między dwoma sposobami pozyskiwania kontek
 
 ## 5.3. Zalando: interpretacja potrzeby w kontekście mody
 
-W zakupach odzieżowych klient często rozpoczyna od okazji, stylu albo oczekiwanego efektu. Parametry katalogowe nie zawsze odpowiadają językowi używanemu podczas opisywania takiej potrzeby, a użytkownik może wiedzieć, na jakie wydarzenie szuka stroju, bez wskazania konkretnego fasonu. Powstaje wtedy potrzeba przełożenia opisu sytuacji na odpowiednie propozycje produktów. Temu problemowi odpowiadał zapowiedziany przez Zalando asystent wykorzystujący ChatGPT (Zalando, 2023).
+W zakupach odzieżowych klient często rozpoczyna od okazji, stylu albo oczekiwanego efektu. Parametry katalogowe nie zawsze odpowiadają językowi używanemu podczas opisywania takiej potrzeby, a użytkownik może wiedzieć, na jakie wydarzenie szuka stroju, bez wskazania konkretnego fasonu. Powstaje wtedy potrzeba przełożenia opisu sytuacji na odpowiednie propozycje produktów. Temu problemowi odpowiadał zapowiedziany przez Zalando asystent wykorzystujący ChatGPT (corporate.zalando.com/en/technology/zalando-launch-fashion-assistant-powered-chatgpt).
 
 Komunikat przedstawiał możliwość wyszukiwania przy użyciu własnych słów i określeń związanych z modą. Jako przykład podano pytanie o strój na ślub na Santorini w lipcu. Kontekst obejmował więc rodzaj wydarzenia, miejsce oraz porę roku. Asystent miał przygotować wyjaśnienie i propozycje odpowiadające tak opisanej sytuacji. Przykład prezentuje deklarowany scenariusz funkcji, a nie wynik niezależnego badania jej skuteczności.
 
@@ -46,15 +46,15 @@ Z perspektywy zarządzania przypadek ten pokazuje znaczenie języka właściwego
 
 ## 5.4. Allegro: ocena trafności jako warunek użytecznego dopasowania
 
-Na platformie obejmującej wiele kategorii problemem jest także ocena jakości wyników wyszukiwania, jednak sama liczba kliknięć nie wyjaśnia, czy produkty odpowiadają znaczeniu konkretnego zapytania. Artykuł Marhuli i Sidora opisuje wykorzystanie modeli językowych do wspierania takiej oceny. Przedstawiono narzędzie Relevance Assessment Tool oraz proces przygotowania danych odniesienia (Marhula, Sidor, 2026). Materiał pochodzi od zespołu technicznego przedsiębiorstwa i opisuje jego doświadczenia.
+Na platformie obejmującej wiele kategorii problemem jest także ocena jakości wyników wyszukiwania, jednak sama liczba kliknięć nie wyjaśnia, czy produkty odpowiadają znaczeniu konkretnego zapytania. Artykuł Marhuli i Sidora opisuje wykorzystanie modeli językowych do wspierania takiej oceny. Przedstawiono narzędzie Relevance Assessment Tool oraz proces przygotowania danych odniesienia (blog.allegro.tech/2026/08/automating-search-relevance-llm-as-a-judge.html). Materiał pochodzi od zespołu technicznego przedsiębiorstwa i opisuje jego doświadczenia.
 
 Autorzy zwracają uwagę na niejednoznaczność relacji między zapytaniem a przedstawionym produktem. Oferta może dokładnie odpowiadać potrzebie, stanowić zamiennik albo jedynie produkt uzupełniający. W innych sytuacjach okazuje się nieistotna lub trudna do jednoznacznej oceny. Przygotowanie wspólnych zasad klasyfikacji wymaga więc wiedzy o różnych kategoriach asortymentu, jednak nie wystarcza automatyczne porównanie podobieństwa użytych słów.
 
 Opisany proces wykorzystywał ocenę ludzi oraz rozstrzyganie rozbieżności przez ekspertów. Na tej podstawie przygotowano materiał służący porównywaniu rezultatów modeli językowych. Jest to ważne, ponieważ sam model nie powinien wyznaczać jednocześnie kryterium i oceniać własnej poprawności. Potrzebny pozostaje punkt odniesienia związany z rzeczywistym znaczeniem wyszukiwanego produktu. Dokument pokazuje zatem rolę pracy ludzkiej w przygotowaniu automatycznej oceny.
 
-W tabeli 5.1 przytoczono wybrane wyniki pozwalające porównać trudność rozpoznawania poszczególnych klas trafności.
+W tabeli 4 przytoczono wybrane wyniki pozwalające porównać trudność rozpoznawania poszczególnych klas trafności.
 
-**Tabela 5.1. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro**
+**Tabela 4. Wybrane wyniki oceny klas trafności opisane przez zespół Allegro**
 
 | Klasa relacji produktu do zapytania | Wartość F1 | Liczba przykładów w pokazanym zbiorze |
 |---|---:|---:|
@@ -76,9 +76,9 @@ Wnioskiem z tego przypadku jest potrzeba łączenia różnych rodzajów pomiaru.
 
 Przedstawione rozwiązania różnią się miejscem, w którym AI wspiera kontakt z ofertą. Amazon pokazuje rekomendowanie na podstawie powiązań produktów oraz kontekst rozmowy zakupowej. Zalando koncentruje się na interpretowaniu potrzeby wyrażonej językiem związanym z modą. Allegro przedstawia automatyczną ocenę jakości dopasowania wyników do treści zapytania. W każdym przypadku użyteczność zależy od odpowiedniego połączenia danych i celu zadania.
 
-Tabela 5.2 zestawia rodzaje dostępnych dowodów oraz granice wnioskowania dla analizowanych przypadków.
+Tabela 5 zestawia rodzaje dostępnych dowodów oraz granice wnioskowania dla analizowanych przypadków.
 
-**Tabela 5.2. Porównanie zakresu dowodów w analizowanych przypadkach**
+**Tabela 5. Porównanie zakresu dowodów w analizowanych przypadkach**
 
 | Przypadek | Główna funkcja | Potwierdzony zakres materiału | Czego materiał nie rozstrzyga |
 |---|---|---|---|

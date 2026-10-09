@@ -1,4 +1,4 @@
-# ROZDZIAŁ 3. ZASTOSOWANIA AI W PERSONALIZACJI RELACJI Z KLIENTAMI
+# 3. ZASTOSOWANIA AI W PERSONALIZACJI RELACJI Z KLIENTAMI
 
 ## 3.1. Systemy rekomendacyjne i sposoby dopasowywania produktów
 
@@ -6,9 +6,9 @@ System rekomendacyjny porządkuje dostępne możliwości, aby ułatwić odbiorcy
 
 Jedną z podstawowych metod jest filtrowanie oparte na treści produktów. System wykorzystuje cechy przedmiotów, takie jak kategoria, materiał, przeznaczenie albo parametry techniczne. Następnie wyszukuje podobieństwa względem produktów odpowiadających dotychczasowym preferencjom użytkownika. Osobie przeglądającej lekkie plecaki turystyczne można zaproponować modele o zbliżonych właściwościach. Skuteczność takiego podejścia zależy między innymi od jakości opisów w katalogu.
 
-Odmiennym rozwiązaniem jest filtrowanie współpracujące, wykorzystujące wzorce interakcji z wieloma produktami. Zależności mogą dotyczyć podobnych użytkowników albo przedmiotów wybieranych w zbliżonych sytuacjach. System nie musi wtedy opierać się wyłącznie na szczegółowych opisach asortymentu. Potrzebuje natomiast odpowiedniego materiału pokazującego wcześniejsze zachowania i wybory klientów. Podstawowe podejścia oraz ich ograniczenia omawiają Adomavicius i Tuzhilin (Adomavicius, Tuzhilin, 2005).
+Odmiennym rozwiązaniem jest filtrowanie współpracujące, wykorzystujące wzorce interakcji z wieloma produktami. Zależności mogą dotyczyć podobnych użytkowników albo przedmiotów wybieranych w zbliżonych sytuacjach. System nie musi wtedy opierać się wyłącznie na szczegółowych opisach asortymentu. Potrzebuje natomiast odpowiedniego materiału pokazującego wcześniejsze zachowania i wybory klientów. Podstawowe podejścia oraz ich ograniczenia omawiają Adomavicius i Tuzhilin (Adomavicius i Tuzhilin 2005).
 
-Wariant opisany przez twórców rekomendacji Amazon wykorzystuje podobieństwo między produktami. Zamiast każdorazowo porównywać klienta ze wszystkimi użytkownikami, można korzystać z przygotowanych powiązań przedmiotów. Następnie dobiera się propozycje na podstawie produktów związanych z daną osobą. Rozwiązanie odpowiadało problemowi skali dużego katalogu oraz licznej grupy klientów (Linden, Smith, York, 2003), nie stanowi jednak opisu wszystkich współczesnych mechanizmów stosowanych przez Amazon.
+Wariant opisany przez twórców rekomendacji Amazon wykorzystuje podobieństwo między produktami. Zamiast każdorazowo porównywać klienta ze wszystkimi użytkownikami, można korzystać z przygotowanych powiązań przedmiotów. Następnie dobiera się propozycje na podstawie produktów związanych z daną osobą. Rozwiązanie odpowiadało problemowi skali dużego katalogu oraz licznej grupy klientów (Linden et al. 2003), nie stanowi jednak opisu wszystkich współczesnych mechanizmów stosowanych przez Amazon.
 
 Podejścia hybrydowe łączą kilka rodzajów informacji potrzebnych do tworzenia rekomendacji. Wykorzystywane mogą być cechy produktów, historia interakcji oraz aktualny kontekst wizyty, co pozwala ograniczać słabości pojedynczej metody, choć zwiększa złożoność rozwiązania. Trudniejsze staje się także ustalenie przyczyny konkretnej propozycji przedstawionej klientowi. Projekt wymaga więc równoczesnej kontroli trafności, szybkości oraz możliwości wyjaśnienia wyniku.
 
@@ -16,9 +16,9 @@ Częstym problemem jest zimny start, czyli niedostatek danych o użytkowniku lub
 
 Drugie ograniczenie dotyczy nadmiernego powtarzania produktów podobnych do wcześniej oglądanych. Klient otrzymuje trafne, lecz bardzo wąskie propozycje, przez co trudniej odkrywa alternatywy, a system może także utrwalać popularność produktów, które już wcześniej często pokazywano. Powstaje zależność między ekspozycją oferty a danymi służącymi do kolejnego uczenia. W ocenie warto więc uwzględniać różnorodność oraz dostępność mniej oczywistych możliwości.
 
-W tabeli 3.1 porównano podstawy działania oraz ograniczenia najważniejszych podejść do rekomendowania produktów.
+W tabeli 2 porównano podstawy działania oraz ograniczenia najważniejszych podejść do rekomendowania produktów.
 
-**Tabela 3.1. Porównanie podstawowych podejść rekomendacyjnych**
+**Tabela 2. Porównanie podstawowych podejść rekomendacyjnych**
 
 | Podejście | Główna podstawa dopasowania | Przydatność | Ograniczenie |
 |---|---|---|---|
@@ -39,7 +39,7 @@ Dobrym przykładem jest przewidywanie zainteresowania ponownym zakupem produktu 
 
 Innym zastosowaniem jest rozpoznawanie sygnałów wskazujących na możliwą utratę klienta. Dłuższa przerwa w zakupach może uzasadniać sprawdzenie jakości dotychczasowej obsługi, nie powinna jednak automatycznie prowadzić do wysłania rabatu każdej nieaktywnej osobie. Powodem przerwy może być sezonowość produktu albo naturalnie rzadka potrzeba zakupowa. Właściwa reakcja zależy więc od interpretacji wyniku w kontekście działalności sklepu.
 
-Huang i Rust wskazują szerokie możliwości wykorzystania AI w działaniach marketingowych (Huang, Rust, 2021), przy czym obejmują one analizowanie informacji i wspieranie wyboru odpowiednich działań wobec odbiorców. W praktyce należy jednak oddzielić przewidywanie zachowania od przewidywania skutku interwencji. Klient prawdopodobnie dokonujący zakupu nie musi potrzebować dodatkowej zachęty cenowej. Przyznanie mu rabatu może obniżyć marżę bez zmiany decyzji zakupowej.
+Huang i Rust wskazują szerokie możliwości wykorzystania AI w działaniach marketingowych (Huang i Rust 2021), przy czym obejmują one analizowanie informacji i wspieranie wyboru odpowiednich działań wobec odbiorców. W praktyce należy jednak oddzielić przewidywanie zachowania od przewidywania skutku interwencji. Klient prawdopodobnie dokonujący zakupu nie musi potrzebować dodatkowej zachęty cenowej. Przyznanie mu rabatu może obniżyć marżę bez zmiany decyzji zakupowej.
 
 Ocena modelu wymaga poprawnego podziału danych używanych podczas jego przygotowania. Informacje powstałe po przewidywanym zdarzeniu nie powinny pomagać w odtwarzaniu wcześniejszej decyzji. Przykładowo potwierdzenie płatności nie może służyć do przewidywania zakupu przed złożeniem zamówienia. Taki błąd tworzyłby pozornie wysoką skuteczność rozwiązania na danych historycznych. Podczas rzeczywistego działania sklepu odpowiednia informacja nie byłaby jeszcze dostępna.
 
@@ -57,9 +57,9 @@ Personalizacja obsługi pojawia się wtedy, gdy odpowiedź uwzględnia właściw
 
 W prostych zgłoszeniach przydatne bywają krótkie, jednoznaczne odpowiedzi oparte na danych systemowych, co dotyczy statusu przesyłki, godzin kontaktu albo sposobu pobrania dokumentu sprzedaży. Bardziej złożone pytania wymagają interpretacji kilku informacji i uwzględnienia wyjątków. W takich sytuacjach potrzebna jest możliwość przekazania rozmowy do pracownika. Personalizacja powinna ułatwiać to przekazanie wraz z dotychczasowym kontekstem zgłoszenia.
 
-Badanie Luo i współautorów pokazuje znaczenie ujawnienia, że rozmówcą jest chatbot (Luo i in., 2019). Wskazuje ono, że sposób przedstawienia systemu może wpływać na zachowanie odbiorców, nie stanowi jednak uzasadnienia dla ukrywania automatycznego charakteru obsługi. Wdrożenie wymaga uwzględnienia obowiązków informacyjnych oraz długoterminowego zaufania klientów. Wynik pojedynczego badania sprzedażowego nie rozstrzyga wszystkich kwestii prawnych i etycznych.
+Badanie Luo i współautorów pokazuje znaczenie ujawnienia, że rozmówcą jest chatbot (Luo et al. 2019). Wskazuje ono, że sposób przedstawienia systemu może wpływać na zachowanie odbiorców, nie stanowi jednak uzasadnienia dla ukrywania automatycznego charakteru obsługi. Wdrożenie wymaga uwzględnienia obowiązków informacyjnych oraz długoterminowego zaufania klientów. Wynik pojedynczego badania sprzedażowego nie rozstrzyga wszystkich kwestii prawnych i etycznych.
 
-Adam, Wessel i Benlian analizują zachowanie użytkowników w kontakcie z chatbotami obsługowymi (Adam, Wessel, Benlian, 2021). Ich perspektywa wskazuje na znaczenie sposobu projektowania interakcji z systemem. Nie wystarcza zatem samo udostępnienie mechanizmu generującego odpowiedzi na pytania, przy czym ważne są czytelność rozmowy, oczekiwania odbiorcy oraz charakter wykonywanego zadania. Zachowania zaobserwowane w określonym badaniu należy interpretować w jego granicach.
+Adam, Wessel i Benlian analizują zachowanie użytkowników w kontakcie z chatbotami obsługowymi (Adam et al. 2021). Ich perspektywa wskazuje na znaczenie sposobu projektowania interakcji z systemem. Nie wystarcza zatem samo udostępnienie mechanizmu generującego odpowiedzi na pytania, przy czym ważne są czytelność rozmowy, oczekiwania odbiorcy oraz charakter wykonywanego zadania. Zachowania zaobserwowane w określonym badaniu należy interpretować w jego granicach.
 
 Błędy generatywnego chatbota mogą być trudne do rozpoznania przez klienta. Odpowiedź bywa poprawna językowo, mimo że zawiera nieprawdziwe informacje o produkcie. Szczególnie ryzykowne są pomyłki dotyczące bezpieczeństwa użytkowania, płatności lub uprawnień konsumenta. System powinien korzystać z zatwierdzonych materiałów i sygnalizować brak pewnej odpowiedzi, dlatego konieczne jest również monitorowanie zgłoszeń ujawniających powtarzające się problemy.
 
@@ -87,9 +87,9 @@ Wdrożenie personalizacji wymaga połączenia modelu z procesami działającymi 
 
 Przepływ informacji można przedstawić jako kilka powiązanych etapów. Najpierw określa się dopuszczalne dane i sposób rejestrowania zdarzeń. Następnie przygotowuje się cechy potrzebne modelowi oraz wybiera odpowiednie działanie. Wynik trafia do witryny lub systemu obsługi przez ustalony interfejs. Reakcja użytkownika może później służyć ocenie jakości, zgodnie z przyjętymi zasadami przetwarzania.
 
-Tabela 3.2 porządkuje proponowane miary oceny i wskazuje ryzyko ich niewłaściwego interpretowania.
+Tabela 3 porządkuje proponowane miary oceny i wskazuje ryzyko ich niewłaściwego interpretowania.
 
-**Tabela 3.2. Proponowane kryteria oceny wdrożenia personalizacji**
+**Tabela 3. Proponowane kryteria oceny wdrożenia personalizacji**
 
 | Cel | Przykładowa miara | Potrzebne doprecyzowanie | Możliwe błędne odczytanie |
 |---|---|---|---|
@@ -106,4 +106,4 @@ Podczas porównywania wariantów można wykorzystać test A/B z odpowiednim podz
 
 Istotna jest również możliwość bezpiecznego działania podczas awarii modelu lub usługi zewnętrznej. Sklep powinien zachować podstawowe wyszukiwanie, zakup i dostęp do informacji o zamówieniu. Zapasowy wariant może korzystać z ogólnych rekomendacji albo standardowej kolejności produktów. Klient nie powinien tracić możliwości wykonania podstawowej czynności przez niedostępność personalizacji. Takie rozwiązanie ogranicza wpływ awarii na ciągłość obsługi.
 
-NIST zaleca zarządzanie ryzykiem AI przez cały cykl działania systemu (NIST, 2023). Obejmuje ono odpowiedzialność, poznanie kontekstu, pomiar oraz reagowanie na problemy. W przedsiębiorstwie należy wskazać osoby zatwierdzające zmiany i analizujące reklamacje. Powinny one mieć możliwość wyłączenia funkcji powodującej nieakceptowalne skutki dla klientów.
+NIST zaleca zarządzanie ryzykiem AI przez cały cykl działania systemu (NIST 2023). Obejmuje ono odpowiedzialność, poznanie kontekstu, pomiar oraz reagowanie na problemy. W przedsiębiorstwie należy wskazać osoby zatwierdzające zmiany i analizujące reklamacje. Powinny one mieć możliwość wyłączenia funkcji powodującej nieakceptowalne skutki dla klientów.
